@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Target Practice' target in the 'Target Practice' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

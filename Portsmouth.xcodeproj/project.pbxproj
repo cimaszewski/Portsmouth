@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8317CD331650B7DC008E9675 /* center_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8317CD311650B7DC008E9675 /* center_alt.png */; };
+		8317CD341650B7DC008E9675 /* center_alt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8317CD321650B7DC008E9675 /* center_alt@2x.png */; };
+		83218A4A16C29191009C476C /* LoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 83218A4916C29191009C476C /* LoginItems.m */; };
+		832AEE9915E1330D00E071B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832AEE9815E1330D00E071B6 /* Cocoa.framework */; };
+		832AEEB715E1330E00E071B6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832AEEB615E1330E00E071B6 /* SenTestingKit.framework */; };
+		832AEEB815E1330E00E071B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832AEE9815E1330D00E071B6 /* Cocoa.framework */; };
+		832AEEC015E1330E00E071B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 832AEEBE15E1330E00E071B6 /* InfoPlist.strings */; };
+		832FDA66165AC50C00040876 /* menuItemHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 832FDA64165AC50C00040876 /* menuItemHighlight.png */; };
+		832FDA67165AC50C00040876 /* menuItemHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 832FDA65165AC50C00040876 /* menuItemHighlight@2x.png */; };
+		834A3ABC163D48EE009A362C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3A9B163D48EE009A362C /* AppDelegate.m */; };
+		834A3ABD163D48EE009A362C /* AccessibilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3A9D163D48EE009A362C /* AccessibilityUtil.m */; };
+		834A3ABE163D48EE009A362C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3A9F163D48EE009A362C /* main.m */; };
+		834A3AC0163D48EE009A362C /* PortsmouthConfigData.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AA3163D48EE009A362C /* PortsmouthConfigData.m */; };
+		834A3AC1163D48EE009A362C /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834A3AA4163D48EE009A362C /* PreferencesWindow.xib */; };
+		834A3AC2163D48EE009A362C /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AA6163D48EE009A362C /* PreferencesWindowController.m */; };
+		834A3AC3163D48EE009A362C /* RoundedCornerOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AA8163D48EE009A362C /* RoundedCornerOverlayWindow.m */; };
+		834A3AC4163D48EE009A362C /* WindowDragEventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AAA163D48EE009A362C /* WindowDragEventController.m */; };
+		834A3AC5163D48EE009A362C /* WindowHotzoneData.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AAC163D48EE009A362C /* WindowHotzoneData.m */; };
+		834A3AC6163D48EE009A362C /* WindowMoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AAE163D48EE009A362C /* WindowMoverCell.m */; };
+		834A3AC7163D48EE009A362C /* WindowMoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AB0163D48EE009A362C /* WindowMoverController.m */; };
+		834A3AC8163D48EE009A362C /* WindowMoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AB2163D48EE009A362C /* WindowMoverView.m */; };
+		834A3AC9163D48EE009A362C /* WindowSnapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AB4163D48EE009A362C /* WindowSnapController.m */; };
+		834A3ACA163D48EE009A362C /* WindowTargetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AB7163D48EE009A362C /* WindowTargetController.m */; };
+		834A3ACB163D48EE009A362C /* WindowTargetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AB9163D48EE009A362C /* WindowTargetData.m */; };
+		834A3ACC163D48EE009A362C /* X11Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3ABB163D48EE009A362C /* X11Util.m */; };
+		834A3AD1163D4A7D009A362C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ACD163D4A7D009A362C /* Credits.rtf */; };
+		834A3AD2163D4A7D009A362C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ACF163D4A7D009A362C /* InfoPlist.strings */; };
+		834A3AD5163D4B1B009A362C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834A3AD3163D4B1B009A362C /* MainMenu.xib */; };
+		834A3ADF163D4B40009A362C /* center.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3AD6163D4B40009A362C /* center.png */; };
+		834A3AE0163D4B40009A362C /* center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3AD7163D4B40009A362C /* center@2x.png */; };
+		834A3AE1163D4B40009A362C /* cornerArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3AD8163D4B40009A362C /* cornerArrow.png */; };
+		834A3AE2163D4B40009A362C /* cornerArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3AD9163D4B40009A362C /* cornerArrow@2x.png */; };
+		834A3AE3163D4B40009A362C /* edgeArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ADA163D4B40009A362C /* edgeArrow.png */; };
+		834A3AE4163D4B40009A362C /* edgeArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ADB163D4B40009A362C /* edgeArrow@2x.png */; };
+		834A3AE5163D4B40009A362C /* menuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ADC163D4B40009A362C /* menuItem.png */; };
+		834A3AE6163D4B40009A362C /* menuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ADD163D4B40009A362C /* menuItem@2x.png */; };
+		834A3AE7163D4B40009A362C /* NewIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ADE163D4B40009A362C /* NewIcon.icns */; };
+		834A3AF1163D4CE9009A362C /* PortsmouthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AEB163D4B77009A362C /* PortsmouthTests.m */; };
+		8378DED917CD7FEC00D8A0D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8378DED817CD7FEC00D8A0D0 /* LICENSE */; };
+		8378DEE617CD8F2B00D8A0D0 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8378DEE317CD8C3B00D8A0D0 /* ShortcutRecorder.framework */; };
+		839276741636281900DF34EE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839276731636281900DF34EE /* Carbon.framework */; };
+		839D42DE163E154400C5EFFF /* PausableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D42DC163E0E4B00C5EFFF /* PausableController.m */; };
+		83A2599A166B5B7700F7B5E5 /* BorderStyleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A25999166B5B7700F7B5E5 /* BorderStyleValueTransformer.m */; };
+		83A2599D166B6BE300F7B5E5 /* PortsmouthColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2599C166B6BE300F7B5E5 /* PortsmouthColorWell.m */; };
+		83B337F0165867F50037A84A /* X11WeakLinker.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B337EF165867F50037A84A /* X11WeakLinker.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		832AEEB915E1330E00E071B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 832AEE8B15E1330D00E071B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 832AEE9315E1330D00E071B6;
+			remoteInfo = "Target Practice";
+		};
+		8378DEE217CD8C3B00D8A0D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 939837800DA42965007F53F3;
+			remoteInfo = ShortcutRecorder.framework;
+		};
+		8378DEE417CD8C3B00D8A0D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93983B220DA43C4E007F53F3;
+			remoteInfo = ShortcutRecorder_Tester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8317CD311650B7DC008E9675 /* center_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center_alt.png; sourceTree = SOURCE_ROOT; };
+		8317CD321650B7DC008E9675 /* center_alt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_alt@2x.png"; sourceTree = SOURCE_ROOT; };
+		83218A4816C29190009C476C /* LoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItems.h; path = Portsmouth/LoginItems.h; sourceTree = SOURCE_ROOT; };
+		83218A4916C29191009C476C /* LoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItems.m; path = Portsmouth/LoginItems.m; sourceTree = SOURCE_ROOT; };
+		832AEE9415E1330D00E071B6 /* Portsmouth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portsmouth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		832AEE9815E1330D00E071B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		832AEE9B15E1330D00E071B6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		832AEE9C15E1330D00E071B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		832AEE9D15E1330D00E071B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		832AEEB515E1330E00E071B6 /* Portsmouth Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Portsmouth Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		832AEEB615E1330E00E071B6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		832AEEBF15E1330E00E071B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		832FDA64165AC50C00040876 /* menuItemHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuItemHighlight.png; sourceTree = SOURCE_ROOT; };
+		832FDA65165AC50C00040876 /* menuItemHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuItemHighlight@2x.png"; sourceTree = SOURCE_ROOT; };
+		834A3A9A163D48EE009A362C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Portsmouth/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		834A3A9B163D48EE009A362C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Portsmouth/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		834A3A9C163D48EE009A362C /* AccessibilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessibilityUtil.h; path = Portsmouth/AccessibilityUtil.h; sourceTree = SOURCE_ROOT; };
+		834A3A9D163D48EE009A362C /* AccessibilityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessibilityUtil.m; path = Portsmouth/AccessibilityUtil.m; sourceTree = SOURCE_ROOT; };
+		834A3A9E163D48EE009A362C /* BorderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorderStyle.h; path = Portsmouth/BorderStyle.h; sourceTree = SOURCE_ROOT; };
+		834A3A9F163D48EE009A362C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Portsmouth/main.m; sourceTree = SOURCE_ROOT; };
+		834A3AA0163D48EE009A362C /* Portsmouth-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Portsmouth-Info.plist"; path = "Portsmouth/Portsmouth-Info.plist"; sourceTree = SOURCE_ROOT; };
+		834A3AA1163D48EE009A362C /* Portsmouth-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Portsmouth-Prefix.pch"; path = "Portsmouth/Portsmouth-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		834A3AA2163D48EE009A362C /* PortsmouthConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortsmouthConfigData.h; path = Portsmouth/PortsmouthConfigData.h; sourceTree = SOURCE_ROOT; };
+		834A3AA3163D48EE009A362C /* PortsmouthConfigData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PortsmouthConfigData.m; path = Portsmouth/PortsmouthConfigData.m; sourceTree = SOURCE_ROOT; };
+		834A3AA4163D48EE009A362C /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesWindow.xib; path = Portsmouth/PreferencesWindow.xib; sourceTree = SOURCE_ROOT; };
+		834A3AA5163D48EE009A362C /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesWindowController.h; path = Portsmouth/PreferencesWindowController.h; sourceTree = SOURCE_ROOT; };
+		834A3AA6163D48EE009A362C /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesWindowController.m; path = Portsmouth/PreferencesWindowController.m; sourceTree = SOURCE_ROOT; };
+		834A3AA7163D48EE009A362C /* RoundedCornerOverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundedCornerOverlayWindow.h; path = Portsmouth/RoundedCornerOverlayWindow.h; sourceTree = SOURCE_ROOT; };
+		834A3AA8163D48EE009A362C /* RoundedCornerOverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundedCornerOverlayWindow.m; path = Portsmouth/RoundedCornerOverlayWindow.m; sourceTree = SOURCE_ROOT; };
+		834A3AA9163D48EE009A362C /* WindowDragEventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowDragEventController.h; path = Portsmouth/WindowDragEventController.h; sourceTree = SOURCE_ROOT; };
+		834A3AAA163D48EE009A362C /* WindowDragEventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowDragEventController.m; path = Portsmouth/WindowDragEventController.m; sourceTree = SOURCE_ROOT; };
+		834A3AAB163D48EE009A362C /* WindowHotzoneData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowHotzoneData.h; path = Portsmouth/WindowHotzoneData.h; sourceTree = SOURCE_ROOT; };
+		834A3AAC163D48EE009A362C /* WindowHotzoneData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowHotzoneData.m; path = Portsmouth/WindowHotzoneData.m; sourceTree = SOURCE_ROOT; };
+		834A3AAD163D48EE009A362C /* WindowMoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowMoverCell.h; path = Portsmouth/WindowMoverCell.h; sourceTree = SOURCE_ROOT; };
+		834A3AAE163D48EE009A362C /* WindowMoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowMoverCell.m; path = Portsmouth/WindowMoverCell.m; sourceTree = SOURCE_ROOT; };
+		834A3AAF163D48EE009A362C /* WindowMoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowMoverController.h; path = Portsmouth/WindowMoverController.h; sourceTree = SOURCE_ROOT; };
+		834A3AB0163D48EE009A362C /* WindowMoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowMoverController.m; path = Portsmouth/WindowMoverController.m; sourceTree = SOURCE_ROOT; };
+		834A3AB1163D48EE009A362C /* WindowMoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowMoverView.h; path = Portsmouth/WindowMoverView.h; sourceTree = SOURCE_ROOT; };
+		834A3AB2163D48EE009A362C /* WindowMoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowMoverView.m; path = Portsmouth/WindowMoverView.m; sourceTree = SOURCE_ROOT; };
+		834A3AB3163D48EE009A362C /* WindowSnapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowSnapController.h; path = Portsmouth/WindowSnapController.h; sourceTree = SOURCE_ROOT; };
+		834A3AB4163D48EE009A362C /* WindowSnapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowSnapController.m; path = Portsmouth/WindowSnapController.m; sourceTree = SOURCE_ROOT; };
+		834A3AB5163D48EE009A362C /* WindowTargetConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowTargetConstants.h; path = Portsmouth/WindowTargetConstants.h; sourceTree = SOURCE_ROOT; };
+		834A3AB6163D48EE009A362C /* WindowTargetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowTargetController.h; path = Portsmouth/WindowTargetController.h; sourceTree = SOURCE_ROOT; };
+		834A3AB7163D48EE009A362C /* WindowTargetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowTargetController.m; path = Portsmouth/WindowTargetController.m; sourceTree = SOURCE_ROOT; };
+		834A3AB8163D48EE009A362C /* WindowTargetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowTargetData.h; path = Portsmouth/WindowTargetData.h; sourceTree = SOURCE_ROOT; };
+		834A3AB9163D48EE009A362C /* WindowTargetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowTargetData.m; path = Portsmouth/WindowTargetData.m; sourceTree = SOURCE_ROOT; };
+		834A3ABA163D48EE009A362C /* X11Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = X11Util.h; path = Portsmouth/X11Util.h; sourceTree = SOURCE_ROOT; };
+		834A3ABB163D48EE009A362C /* X11Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = X11Util.m; path = Portsmouth/X11Util.m; sourceTree = SOURCE_ROOT; };
+		834A3ACE163D4A7D009A362C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Portsmouth/en.lproj/Credits.rtf; sourceTree = SOURCE_ROOT; };
+		834A3AD0163D4A7D009A362C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Portsmouth/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		834A3AD4163D4B1B009A362C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Portsmouth/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		834A3AD6163D4B40009A362C /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = SOURCE_ROOT; };
+		834A3AD7163D4B40009A362C /* center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center@2x.png"; sourceTree = SOURCE_ROOT; };
+		834A3AD8163D4B40009A362C /* cornerArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cornerArrow.png; sourceTree = SOURCE_ROOT; };
+		834A3AD9163D4B40009A362C /* cornerArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cornerArrow@2x.png"; sourceTree = SOURCE_ROOT; };
+		834A3ADA163D4B40009A362C /* edgeArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edgeArrow.png; sourceTree = SOURCE_ROOT; };
+		834A3ADB163D4B40009A362C /* edgeArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edgeArrow@2x.png"; sourceTree = SOURCE_ROOT; };
+		834A3ADC163D4B40009A362C /* menuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuItem.png; sourceTree = SOURCE_ROOT; };
+		834A3ADD163D4B40009A362C /* menuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuItem@2x.png"; sourceTree = SOURCE_ROOT; };
+		834A3ADE163D4B40009A362C /* NewIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = NewIcon.icns; sourceTree = SOURCE_ROOT; };
+		834A3AE9163D4B77009A362C /* PortsmouthTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PortsmouthTests-Info.plist"; path = "PortsmouthTests/PortsmouthTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		834A3AEA163D4B77009A362C /* PortsmouthTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortsmouthTests.h; path = PortsmouthTests/PortsmouthTests.h; sourceTree = SOURCE_ROOT; };
+		834A3AEB163D4B77009A362C /* PortsmouthTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PortsmouthTests.m; path = PortsmouthTests/PortsmouthTests.m; sourceTree = SOURCE_ROOT; };
+		8378DED117CB659A00D8A0D0 /* Portsmouth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Portsmouth.h; path = Portsmouth/Portsmouth.h; sourceTree = SOURCE_ROOT; };
+		8378DED217CB659A00D8A0D0 /* PortsmouthDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortsmouthDefines.h; path = Portsmouth/PortsmouthDefines.h; sourceTree = SOURCE_ROOT; };
+		8378DED317CB659A00D8A0D0 /* WindowMoverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowMoverDelegate.h; path = Portsmouth/WindowMoverDelegate.h; sourceTree = SOURCE_ROOT; };
+		8378DED817CD7FEC00D8A0D0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
+		839276731636281900DF34EE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		839D42DB163E0E4B00C5EFFF /* PausableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PausableController.h; path = Portsmouth/PausableController.h; sourceTree = SOURCE_ROOT; };
+		839D42DC163E0E4B00C5EFFF /* PausableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PausableController.m; path = Portsmouth/PausableController.m; sourceTree = SOURCE_ROOT; };
+		83A25998166B5B7700F7B5E5 /* BorderStyleValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorderStyleValueTransformer.h; path = Portsmouth/BorderStyleValueTransformer.h; sourceTree = SOURCE_ROOT; };
+		83A25999166B5B7700F7B5E5 /* BorderStyleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorderStyleValueTransformer.m; path = Portsmouth/BorderStyleValueTransformer.m; sourceTree = SOURCE_ROOT; };
+		83A2599B166B6BE300F7B5E5 /* PortsmouthColorWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortsmouthColorWell.h; path = Portsmouth/PortsmouthColorWell.h; sourceTree = SOURCE_ROOT; };
+		83A2599C166B6BE300F7B5E5 /* PortsmouthColorWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PortsmouthColorWell.m; path = Portsmouth/PortsmouthColorWell.m; sourceTree = SOURCE_ROOT; };
+		83B337EE165867F50037A84A /* X11WeakLinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = X11WeakLinker.h; path = Portsmouth/X11WeakLinker.h; sourceTree = SOURCE_ROOT; };
+		83B337EF165867F50037A84A /* X11WeakLinker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = X11WeakLinker.m; path = Portsmouth/X11WeakLinker.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		832AEE9115E1330D00E071B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8378DEE617CD8F2B00D8A0D0 /* ShortcutRecorder.framework in Frameworks */,
+				839276741636281900DF34EE /* Carbon.framework in Frameworks */,
+				832AEE9915E1330D00E071B6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		832AEEB115E1330E00E071B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				832AEEB715E1330E00E071B6 /* SenTestingKit.framework in Frameworks */,
+				832AEEB815E1330E00E071B6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		832AEE8915E1330D00E071B6 = {
+			isa = PBXGroup;
+			children = (
+				832AEE9E15E1330D00E071B6 /* Portsmouth */,
+				832AEEBB15E1330E00E071B6 /* Portsmouth Tests */,
+				832AEE9715E1330D00E071B6 /* Frameworks */,
+				832AEE9515E1330D00E071B6 /* Products */,
+				8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		832AEE9515E1330D00E071B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				832AEE9415E1330D00E071B6 /* Portsmouth.app */,
+				832AEEB515E1330E00E071B6 /* Portsmouth Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		832AEE9715E1330D00E071B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				839276731636281900DF34EE /* Carbon.framework */,
+				832AEE9815E1330D00E071B6 /* Cocoa.framework */,
+				832AEEB615E1330E00E071B6 /* SenTestingKit.framework */,
+				832AEE9A15E1330D00E071B6 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832AEE9A15E1330D00E071B6 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				832AEE9B15E1330D00E071B6 /* AppKit.framework */,
+				832AEE9C15E1330D00E071B6 /* CoreData.framework */,
+				832AEE9D15E1330D00E071B6 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		832AEE9E15E1330D00E071B6 /* Portsmouth */ = {
+			isa = PBXGroup;
+			children = (
+				83A25996166B5B4D00F7B5E5 /* Value Transformers */,
+				839D42D9163E0B3600C5EFFF /* Constants */,
+				83BEBFE91624F6CE00F55B0F /* Views */,
+				8390DA02161D170B009F28B3 /* Cells */,
+				832AEEF115E134FD00E071B6 /* Controllers */,
+				832AEEF315E1352C00E071B6 /* Data */,
+				832AEEF015E134E400E071B6 /* Utilities */,
+				832AEEF215E1351800E071B6 /* Windows */,
+				834A3A9A163D48EE009A362C /* AppDelegate.h */,
+				834A3A9B163D48EE009A362C /* AppDelegate.m */,
+				834A3AA4163D48EE009A362C /* PreferencesWindow.xib */,
+				834A3AD3163D4B1B009A362C /* MainMenu.xib */,
+				832AEE9F15E1330D00E071B6 /* Supporting Files */,
+			);
+			name = Portsmouth;
+			path = "Target Practice";
+			sourceTree = "<group>";
+		};
+		832AEE9F15E1330D00E071B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				832FDA64165AC50C00040876 /* menuItemHighlight.png */,
+				832FDA65165AC50C00040876 /* menuItemHighlight@2x.png */,
+				8317CD311650B7DC008E9675 /* center_alt.png */,
+				8317CD321650B7DC008E9675 /* center_alt@2x.png */,
+				834A3ACD163D4A7D009A362C /* Credits.rtf */,
+				834A3ACF163D4A7D009A362C /* InfoPlist.strings */,
+				834A3AA0163D48EE009A362C /* Portsmouth-Info.plist */,
+				834A3AA1163D48EE009A362C /* Portsmouth-Prefix.pch */,
+				834A3A9F163D48EE009A362C /* main.m */,
+				834A3AD6163D4B40009A362C /* center.png */,
+				834A3AD7163D4B40009A362C /* center@2x.png */,
+				834A3AD8163D4B40009A362C /* cornerArrow.png */,
+				834A3AD9163D4B40009A362C /* cornerArrow@2x.png */,
+				834A3ADA163D4B40009A362C /* edgeArrow.png */,
+				834A3ADB163D4B40009A362C /* edgeArrow@2x.png */,
+				834A3ADC163D4B40009A362C /* menuItem.png */,
+				834A3ADD163D4B40009A362C /* menuItem@2x.png */,
+				834A3ADE163D4B40009A362C /* NewIcon.icns */,
+				8378DED817CD7FEC00D8A0D0 /* LICENSE */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		832AEEBB15E1330E00E071B6 /* Portsmouth Tests */ = {
+			isa = PBXGroup;
+			children = (
+				834A3AEA163D4B77009A362C /* PortsmouthTests.h */,
+				834A3AEB163D4B77009A362C /* PortsmouthTests.m */,
+				832AEEBC15E1330E00E071B6 /* Supporting Files */,
+			);
+			name = "Portsmouth Tests";
+			path = "Target PracticeTests";
+			sourceTree = "<group>";
+		};
+		832AEEBC15E1330E00E071B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				834A3AE9163D4B77009A362C /* PortsmouthTests-Info.plist */,
+				832AEEBE15E1330E00E071B6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		832AEEF015E134E400E071B6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				83218A4816C29190009C476C /* LoginItems.h */,
+				83218A4916C29191009C476C /* LoginItems.m */,
+				834A3A9C163D48EE009A362C /* AccessibilityUtil.h */,
+				834A3A9D163D48EE009A362C /* AccessibilityUtil.m */,
+				834A3ABA163D48EE009A362C /* X11Util.h */,
+				834A3ABB163D48EE009A362C /* X11Util.m */,
+				83B337EE165867F50037A84A /* X11WeakLinker.h */,
+				83B337EF165867F50037A84A /* X11WeakLinker.m */,
+				8378DED217CB659A00D8A0D0 /* PortsmouthDefines.h */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		832AEEF115E134FD00E071B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				834A3AA5163D48EE009A362C /* PreferencesWindowController.h */,
+				834A3AA6163D48EE009A362C /* PreferencesWindowController.m */,
+				834A3AA9163D48EE009A362C /* WindowDragEventController.h */,
+				834A3AAA163D48EE009A362C /* WindowDragEventController.m */,
+				834A3AAF163D48EE009A362C /* WindowMoverController.h */,
+				834A3AB0163D48EE009A362C /* WindowMoverController.m */,
+				834A3AB3163D48EE009A362C /* WindowSnapController.h */,
+				834A3AB4163D48EE009A362C /* WindowSnapController.m */,
+				834A3AB6163D48EE009A362C /* WindowTargetController.h */,
+				834A3AB7163D48EE009A362C /* WindowTargetController.m */,
+				839D42DB163E0E4B00C5EFFF /* PausableController.h */,
+				839D42DC163E0E4B00C5EFFF /* PausableController.m */,
+				8378DED317CB659A00D8A0D0 /* WindowMoverDelegate.h */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		832AEEF215E1351800E071B6 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				834A3AA7163D48EE009A362C /* RoundedCornerOverlayWindow.h */,
+				834A3AA8163D48EE009A362C /* RoundedCornerOverlayWindow.m */,
+				834A3A9E163D48EE009A362C /* BorderStyle.h */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
+		832AEEF315E1352C00E071B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				834A3AA2163D48EE009A362C /* PortsmouthConfigData.h */,
+				834A3AA3163D48EE009A362C /* PortsmouthConfigData.m */,
+				834A3AAB163D48EE009A362C /* WindowHotzoneData.h */,
+				834A3AAC163D48EE009A362C /* WindowHotzoneData.m */,
+				834A3AB8163D48EE009A362C /* WindowTargetData.h */,
+				834A3AB9163D48EE009A362C /* WindowTargetData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		8378DEDE17CD8C3B00D8A0D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8378DEE317CD8C3B00D8A0D0 /* ShortcutRecorder.framework */,
+				8378DEE517CD8C3B00D8A0D0 /* ShortcutRecorder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8390DA02161D170B009F28B3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				834A3AAD163D48EE009A362C /* WindowMoverCell.h */,
+				834A3AAE163D48EE009A362C /* WindowMoverCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		839D42D9163E0B3600C5EFFF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8378DED117CB659A00D8A0D0 /* Portsmouth.h */,
+				834A3AB5163D48EE009A362C /* WindowTargetConstants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		83A25996166B5B4D00F7B5E5 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				83A25998166B5B7700F7B5E5 /* BorderStyleValueTransformer.h */,
+				83A25999166B5B7700F7B5E5 /* BorderStyleValueTransformer.m */,
+			);
+			name = "Value Transformers";
+			sourceTree = "<group>";
+		};
+		83BEBFE91624F6CE00F55B0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				834A3AB1163D48EE009A362C /* WindowMoverView.h */,
+				834A3AB2163D48EE009A362C /* WindowMoverView.m */,
+				83A2599B166B6BE300F7B5E5 /* PortsmouthColorWell.h */,
+				83A2599C166B6BE300F7B5E5 /* PortsmouthColorWell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		832AEE9315E1330D00E071B6 /* Portsmouth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 832AEEC615E1330E00E071B6 /* Build configuration list for PBXNativeTarget "Portsmouth" */;
+			buildPhases = (
+				832AEE9215E1330D00E071B6 /* Resources */,
+				832AEE9015E1330D00E071B6 /* Sources */,
+				832AEE9115E1330D00E071B6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Portsmouth;
+			productName = "Target Practice";
+			productReference = 832AEE9415E1330D00E071B6 /* Portsmouth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		832AEEB415E1330E00E071B6 /* Portsmouth Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 832AEEC915E1330E00E071B6 /* Build configuration list for PBXNativeTarget "Portsmouth Tests" */;
+			buildPhases = (
+				832AEEB015E1330E00E071B6 /* Sources */,
+				832AEEB115E1330E00E071B6 /* Frameworks */,
+				832AEEB215E1330E00E071B6 /* Resources */,
+				832AEEB315E1330E00E071B6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				832AEEBA15E1330E00E071B6 /* PBXTargetDependency */,
+			);
+			name = "Portsmouth Tests";
+			productName = "Target PracticeTests";
+			productReference = 832AEEB515E1330E00E071B6 /* Portsmouth Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		832AEE8B15E1330D00E071B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = Ninjaerobics;
+			};
+			buildConfigurationList = 832AEE8E15E1330D00E071B6 /* Build configuration list for PBXProject "Portsmouth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 832AEE8915E1330D00E071B6;
+			productRefGroup = 832AEE9515E1330D00E071B6 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8378DEDE17CD8C3B00D8A0D0 /* Products */;
+					ProjectRef = 8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				832AEE9315E1330D00E071B6 /* Portsmouth */,
+				832AEEB415E1330E00E071B6 /* Portsmouth Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8378DEE317CD8C3B00D8A0D0 /* ShortcutRecorder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ShortcutRecorder.framework;
+			remoteRef = 8378DEE217CD8C3B00D8A0D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8378DEE517CD8C3B00D8A0D0 /* ShortcutRecorder.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ShortcutRecorder.app;
+			remoteRef = 8378DEE417CD8C3B00D8A0D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		832AEE9215E1330D00E071B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834A3AC1163D48EE009A362C /* PreferencesWindow.xib in Resources */,
+				834A3AD1163D4A7D009A362C /* Credits.rtf in Resources */,
+				834A3AD2163D4A7D009A362C /* InfoPlist.strings in Resources */,
+				834A3AD5163D4B1B009A362C /* MainMenu.xib in Resources */,
+				834A3ADF163D4B40009A362C /* center.png in Resources */,
+				834A3AE0163D4B40009A362C /* center@2x.png in Resources */,
+				834A3AE1163D4B40009A362C /* cornerArrow.png in Resources */,
+				834A3AE2163D4B40009A362C /* cornerArrow@2x.png in Resources */,
+				834A3AE3163D4B40009A362C /* edgeArrow.png in Resources */,
+				834A3AE4163D4B40009A362C /* edgeArrow@2x.png in Resources */,
+				834A3AE5163D4B40009A362C /* menuItem.png in Resources */,
+				834A3AE6163D4B40009A362C /* menuItem@2x.png in Resources */,
+				834A3AE7163D4B40009A362C /* NewIcon.icns in Resources */,
+				8317CD331650B7DC008E9675 /* center_alt.png in Resources */,
+				8317CD341650B7DC008E9675 /* center_alt@2x.png in Resources */,
+				832FDA66165AC50C00040876 /* menuItemHighlight.png in Resources */,
+				832FDA67165AC50C00040876 /* menuItemHighlight@2x.png in Resources */,
+				8378DED917CD7FEC00D8A0D0 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		832AEEB215E1330E00E071B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				832AEEC015E1330E00E071B6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		832AEEB315E1330E00E071B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		832AEE9015E1330D00E071B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834A3ABC163D48EE009A362C /* AppDelegate.m in Sources */,
+				834A3ABD163D48EE009A362C /* AccessibilityUtil.m in Sources */,
+				834A3ABE163D48EE009A362C /* main.m in Sources */,
+				834A3AC0163D48EE009A362C /* PortsmouthConfigData.m in Sources */,
+				834A3AC2163D48EE009A362C /* PreferencesWindowController.m in Sources */,
+				834A3AC3163D48EE009A362C /* RoundedCornerOverlayWindow.m in Sources */,
+				834A3AC4163D48EE009A362C /* WindowDragEventController.m in Sources */,
+				834A3AC5163D48EE009A362C /* WindowHotzoneData.m in Sources */,
+				834A3AC6163D48EE009A362C /* WindowMoverCell.m in Sources */,
+				834A3AC7163D48EE009A362C /* WindowMoverController.m in Sources */,
+				834A3AC8163D48EE009A362C /* WindowMoverView.m in Sources */,
+				834A3AC9163D48EE009A362C /* WindowSnapController.m in Sources */,
+				834A3ACA163D48EE009A362C /* WindowTargetController.m in Sources */,
+				834A3ACB163D48EE009A362C /* WindowTargetData.m in Sources */,
+				834A3ACC163D48EE009A362C /* X11Util.m in Sources */,
+				839D42DE163E154400C5EFFF /* PausableController.m in Sources */,
+				83B337F0165867F50037A84A /* X11WeakLinker.m in Sources */,
+				83A2599A166B5B7700F7B5E5 /* BorderStyleValueTransformer.m in Sources */,
+				83A2599D166B6BE300F7B5E5 /* PortsmouthColorWell.m in Sources */,
+				83218A4A16C29191009C476C /* LoginItems.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		832AEEB015E1330E00E071B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834A3AF1163D4CE9009A362C /* PortsmouthTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		832AEEBA15E1330E00E071B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 832AEE9315E1330D00E071B6 /* Portsmouth */;
+			targetProxy = 832AEEB915E1330E00E071B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		832AEEBE15E1330E00E071B6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				832AEEBF15E1330E00E071B6 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = PortsmouthTests;
+			sourceTree = "<group>";
+		};
+		834A3ACD163D4A7D009A362C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834A3ACE163D4A7D009A362C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		834A3ACF163D4A7D009A362C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834A3AD0163D4A7D009A362C /* en */,
+			);
+			name = InfoPlist.strings;
+			path = Portsmouth;
+			sourceTree = "<group>";
+		};
+		834A3AD3163D4B1B009A362C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834A3AD4163D4B1B009A362C /* en */,
+			);
+			name = MainMenu.xib;
+			path = Portsmouth;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		832AEEC415E1330E00E071B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		832AEEC515E1330E00E071B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		832AEEC715E1330E00E071B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Portsmouth/Portsmouth-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/usr/X11/include,
+					./ShortcutRecorder/Framework,
+					./ShortcutRecorder/Framework/Source,
+				);
+				INFOPLIST_FILE = "Portsmouth/Portsmouth-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Portsmouth;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		832AEEC815E1330E00E071B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Portsmouth/Portsmouth-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/usr/X11/include,
+					./ShortcutRecorder/Framework,
+					./ShortcutRecorder/Framework/Source,
+				);
+				INFOPLIST_FILE = "Portsmouth/Portsmouth-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Portsmouth;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		832AEECA15E1330E00E071B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Target Practice.app/Contents/MacOS/Target Practice";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Practice/Target Practice-Prefix.pch";
+				INFOPLIST_FILE = "Target PracticeTests/PortsmouthTests-Info.plist";
+				PRODUCT_NAME = "Portsmouth Tests";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		832AEECB15E1330E00E071B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Target Practice.app/Contents/MacOS/Target Practice";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Practice/Target Practice-Prefix.pch";
+				INFOPLIST_FILE = "Target PracticeTests/PortsmouthTests-Info.plist";
+				PRODUCT_NAME = "Portsmouth Tests";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		832AEE8E15E1330D00E071B6 /* Build configuration list for PBXProject "Portsmouth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				832AEEC415E1330E00E071B6 /* Debug */,
+				832AEEC515E1330E00E071B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		832AEEC615E1330E00E071B6 /* Build configuration list for PBXNativeTarget "Portsmouth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				832AEEC715E1330E00E071B6 /* Debug */,
+				832AEEC815E1330E00E071B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		832AEEC915E1330E00E071B6 /* Build configuration list for PBXNativeTarget "Portsmouth Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				832AEECA15E1330E00E071B6 /* Debug */,
+				832AEECB15E1330E00E071B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 832AEE8B15E1330D00E071B6 /* Project object */;
+}
