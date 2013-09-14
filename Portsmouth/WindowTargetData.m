@@ -30,7 +30,7 @@ const int HALF_DIVISOR = 2;
     if (self = [super init]) 
     {
         
-        NSLog (@"screen Rect: x: %f, y: %f, width: %f, height: %f", screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
+        log4Debug (@"screen Rect: x: %f, y: %f, width: %f, height: %f", screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
         
         // _bottomLeftWindowRect
         _bottomLeftWindowRect.origin.x = visibleRect.origin.x;
@@ -96,7 +96,7 @@ const int HALF_DIVISOR = 2;
     if (self = [super init]) 
     {
         
-        NSLog (@"screen Rect: x: %f, y: %f, width: %f, height: %f", screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
+        log4Debug (@"screen Rect: x: %f, y: %f, width: %f, height: %f", screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
         
     
         // _bottomLeftWindowRect

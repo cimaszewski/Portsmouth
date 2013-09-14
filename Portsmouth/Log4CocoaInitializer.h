@@ -10,4 +10,7 @@
 
 @interface Log4CocoaInitializer : NSObject
 
+
++ (void) createFileAppender;
+
 @end

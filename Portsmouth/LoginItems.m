@@ -18,7 +18,6 @@
 
 #import "LoginItems.h"
 
-#import "PortsmouthDefines.h"
 
 @interface LoginItems (Private)
 
@@ -82,11 +81,11 @@
 		Boolean gotRef = CFURLGetFSRef(URLToApp, &ref);
 		if (gotRef) {
 			status = GetIconRefFromFileInfo(&ref,
-											/*fileNameLength*/ 0, /*fileName*/ NULL,
-											kFSCatInfoNone, /*catalogInfo*/ NULL,
+											0, NULL,
+											kFSCatInfoNone, NULL,
 											kIconServicesNormalUsageFlag,
 											&icon,
-											/*outLabel*/ NULL);
+											NULL);
 			if (status != noErr)
 				icon = NULL;
 		}
@@ -140,12 +139,63 @@
 
 @implementation GlobalLoginItems
 
-SINGLETON_BOILERPLATE_FULL(GlobalLoginItems, _sharedGlobalLoginItems, initWithLoginItemsType:kLSSharedFileListGlobalLoginItems);
+//SINGLETON_BOILERPLATE_FULL(GlobalLoginItems, _sharedGlobalLoginItems, initWithLoginItemsType:kLSSharedFileListGlobalLoginItems);
+
+static GlobalLoginItems *sharedGlobalLoginItems = nil;  
+
++ (GlobalLoginItems *)_sharedGlobalLoginItems {
+	@synchronized(self) {                            
+		if (sharedGlobalLoginItems == nil) {             
+			sharedGlobalLoginItems = [[self alloc] initWithLoginItemsType:kLSSharedFileListGlobalLoginItems];                                               \
+		}
+	}
+	return sharedGlobalLoginItems;
+}
++ (id)allocWithZone:(NSZone *)zone {
+	@synchronized(self) { 
+		if (sharedGlobalLoginItems == nil) {
+			sharedGlobalLoginItems = [super allocWithZone:zone];
+			return sharedGlobalLoginItems; 
+		} 
+	}
+	
+	return nil;
+}
+
+- (id)copyWithZone:(NSZone *) __unused zone {
+	return self;
+}
+
 
 @end
 
 @implementation SessionLoginItems
 
-SINGLETON_BOILERPLATE_FULL(SessionLoginItems, _sharedSessionLoginItems, initWithLoginItemsType:kLSSharedFileListSessionLoginItems);
+//SINGLETON_BOILERPLATE_FULL(SessionLoginItems, _sharedSessionLoginItems, initWithLoginItemsType:kLSSharedFileListSessionLoginItems);
+
+static SessionLoginItems *sharedSessionLoginItems = nil;
+
++ (SessionLoginItems *)_sharedSessionLoginItems {
+	@synchronized(self) {
+		if (sharedSessionLoginItems == nil) {
+			sharedSessionLoginItems = [[self alloc] initWithLoginItemsType:kLSSharedFileListSessionLoginItems];                                               \
+		}
+	}
+	return sharedSessionLoginItems;
+}
++ (id)allocWithZone:(NSZone *)zone {
+	@synchronized(self) {
+		if (sharedSessionLoginItems == nil) {
+			sharedSessionLoginItems = [super allocWithZone:zone];
+			return sharedSessionLoginItems;
+		}
+	}
+	
+	return nil;
+}
+
+- (id)copyWithZone:(NSZone *) __unused zone {
+	return self;
+}
 
 @end

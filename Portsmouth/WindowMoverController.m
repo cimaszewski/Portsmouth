@@ -170,7 +170,7 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
 - (void)openModal
 {
 
-    NSLog(@"Pause Counter.... %d", _pauseCounter);
+    log4Debug(@"Pause Counter.... %d", _pauseCounter);
        
     if (_pauseCounter > 1)
     {
@@ -189,7 +189,7 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
         @catch (NSException *exception)
         {
             // Must be an X11 or another type of window
-            NSLog(@"Couldn't get the window via accessibility.");
+            log4Debug(@"Couldn't get the window via accessibility.");
             _focusedWindow = nil;
         }
         
@@ -206,7 +206,7 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
                 
                 if (array && [array count] > 0) {
                     
-                    NSLog(@"Must be an X11 window");
+                    log4Debug(@"Must be an X11 window");
                     
                     @try
                     {
@@ -367,7 +367,7 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
 
 -(void)pause
 {
-    NSLog(@"WindowMoverController is Paused...");
+    log4Debug(@"WindowMoverController is Paused...");
     [self removeHotKeyBinding];
     if (_pauseCounter > 1)
     {
@@ -377,7 +377,7 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
 
 -(void)unpause
 {
-    NSLog(@"WindowMoverController is unPaused...");
+    log4Debug(@"WindowMoverController is unPaused...");
     [self setupHotKeyBinding];
 }
 
@@ -395,7 +395,7 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
     }
     @catch (NSException *exception)
     {
-        NSLog(@"Exception thrown: (%@) %@", exception.name, exception.reason);
+        log4ErrorWithException(@"Exception thrown: (%@) %@", exception, exception.name, exception.reason);
     }
     @finally
     {

@@ -205,7 +205,7 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
 
 -(IBAction)changeHotZoneSize:(id)sender
 {
-    NSLog(@"Changing Hotzone Size");
+    log4Debug(@"Changing Hotzone Size");
     [_config setHotzoneWidthPercentage:[sender floatValue]];
     
     [_hotzoneSize setStringValue:[NSString stringWithFormat:@"%d%%", (int)(_config.hotzoneWidthPercentage*100)]];
@@ -214,7 +214,7 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
 
 -(IBAction)changeBorderSize:(id)sender
 {
-    NSLog(@"Changing Hotzone Size");
+    log4Debug(@"Changing Hotzone Size");
     [_config setBorderWidth:[sender floatValue]];
     
     [_borderSize setStringValue:[NSString stringWithFormat:@"%d", (int)(_config.borderWidth)]];

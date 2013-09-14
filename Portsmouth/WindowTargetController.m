@@ -356,7 +356,7 @@ extern short GetMBarHeight(void);
     }
     @catch (NSException *exception)
     {
-        NSLog(@"Exception thrown: (%@) %@", exception.name, exception.reason);
+        log4ErrorWithException(@"Exception thrown: (%@) %@", exception, exception.name, exception.reason);
     }
 }
 

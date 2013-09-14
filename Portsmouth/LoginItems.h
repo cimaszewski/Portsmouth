@@ -23,7 +23,7 @@
 @interface LoginItems : NSObject {
 @private
 	
-	CFStringRef type;
+	CFStringRef _type;
 }
 
 @property(readonly) CFStringRef type;

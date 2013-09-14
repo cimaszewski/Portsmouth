@@ -48,7 +48,7 @@
                 
                 if (parent)
                 {
-                    NSLog(@"Freeing parent");
+                    log4Debug(@"Freeing parent");
                     CFRelease(parent);
                     parent = nil;
                 }
@@ -100,7 +100,7 @@
                 
                 if (parent)
                 {
-                    NSLog(@"Freeing parent");
+                    log4Debug(@"Freeing parent");
                     CFRelease(parent);
                     parent = nil;
                 }
@@ -137,7 +137,7 @@
         
         application = [AccessibilityUtil getApplicationName:window];
         
-        NSLog(@"applicationName: %@", application);
+        log4Debug(@"applicationName: %@", application);
         
         if (application && [application isEqualToString:@"Finder"])
         {
@@ -163,7 +163,7 @@
     @finally {
         if (focusedUIElement)
         {
-            NSLog(@"Freeing focuseUIElement");
+            log4Debug(@"Freeing focuseUIElement");
             CFRelease(focusedUIElement);
         }
     }
@@ -357,13 +357,13 @@
         if ([AccessibilityUtil isDesktopWindow:focusedAppRef])
         {
             if (focusedAppRef != nil) {
-                NSLog(@"getActiveWindow: releasing focusedAppRef isDesktopWindow");
+                log4Debug(@"getActiveWindow: releasing focusedAppRef isDesktopWindow");
                 CFRelease(focusedAppRef);
                 focusedAppRef = nil;
             }
             
             if (focusedWindowRef != nil) {
-                NSLog(@"getActiveWindow: releasing focusedWindowRef isDesktopWindow");
+                log4Debug(@"getActiveWindow: releasing focusedWindowRef isDesktopWindow");
                 CFRelease(focusedWindowRef);
                 focusedWindowRef = nil;
             }
@@ -387,11 +387,11 @@
     }
     @finally 
     {
-        NSLog(@"getActiveWindow: releasing systemElementRef");
+        log4Debug(@"getActiveWindow: releasing systemElementRef");
         CFRelease(systemElementRef);
         
         if (focusedAppRef != nil) {
-            NSLog(@"getActiveWindow: releasing focusedAppRef");
+            log4Debug(@"getActiveWindow: releasing focusedAppRef");
             CFRelease(focusedAppRef);
         }
         
@@ -476,7 +476,7 @@
 {
     if (ref)
     {
-        NSLog(@"freeWindowRef: releasing window");
+        log4Debug(@"freeWindowRef: releasing window");
         CFRelease((CFTypeRef) ref);
     }
 }

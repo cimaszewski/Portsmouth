@@ -4,4 +4,6 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+
+	#import <Log4Cocoa/Log4Cocoa.h>
 #endif

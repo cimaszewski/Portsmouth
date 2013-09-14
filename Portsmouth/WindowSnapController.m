@@ -65,11 +65,11 @@
     
     _isCancelled = NO;
     
-    NSLog(@"Performing Window Drag!!!");
+    log4Debug(@"Performing Window Drag!!!");
     
     NSPoint mouseLoc;
     mouseLoc = [NSEvent mouseLocation]; //get current mouse position
-    NSLog(@"Mouse location: %f %f", mouseLoc.x, mouseLoc.y);
+    log4Debug(@"Mouse location: %f %f", mouseLoc.x, mouseLoc.y);
     
     if (_mouseLocation.x != mouseLoc.x || _mouseLocation.y != mouseLoc.y) 
     {
@@ -146,7 +146,7 @@
     }
     @catch (NSException *exception) 
     {
-        NSLog(@"Exception thrown: (%@) %@", exception.name, exception.reason);
+        log4ErrorWithException(@"Exception thrown: (%@) %@", exception, exception.name, exception.reason);
     }
     @finally 
     {

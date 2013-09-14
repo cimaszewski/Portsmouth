@@ -51,6 +51,9 @@
 		839D42DE163E154400C5EFFF /* PausableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D42DC163E0E4B00C5EFFF /* PausableController.m */; };
 		83A2599A166B5B7700F7B5E5 /* BorderStyleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A25999166B5B7700F7B5E5 /* BorderStyleValueTransformer.m */; };
 		83A2599D166B6BE300F7B5E5 /* PortsmouthColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2599C166B6BE300F7B5E5 /* PortsmouthColorWell.m */; };
+		83B2C31717D6CEA900382630 /* libLog4Cocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B2C30C17D6C84D00382630 /* libLog4Cocoa.a */; };
+		83B2C31917E46C7E00382630 /* log4cocoa.properties in Resources */ = {isa = PBXBuildFile; fileRef = 83B2C31817E46C7E00382630 /* log4cocoa.properties */; };
+		83B2C31C17E46D6400382630 /* Log4CocoaInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2C31B17E46D6400382630 /* Log4CocoaInitializer.m */; };
 		83B337F0165867F50037A84A /* X11WeakLinker.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B337EF165867F50037A84A /* X11WeakLinker.m */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 93983B220DA43C4E007F53F3;
 			remoteInfo = ShortcutRecorder_Tester;
+		};
+		83B2C30B17D6C84D00382630 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83B2C30717D6C84D00382630 /* Log4Cocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D5B4EF114C36987008A00B6;
+			remoteInfo = Log4Cocoa;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -143,7 +153,6 @@
 		834A3AEA163D4B77009A362C /* PortsmouthTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortsmouthTests.h; path = PortsmouthTests/PortsmouthTests.h; sourceTree = SOURCE_ROOT; };
 		834A3AEB163D4B77009A362C /* PortsmouthTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PortsmouthTests.m; path = PortsmouthTests/PortsmouthTests.m; sourceTree = SOURCE_ROOT; };
 		8378DED117CB659A00D8A0D0 /* Portsmouth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Portsmouth.h; path = Portsmouth/Portsmouth.h; sourceTree = SOURCE_ROOT; };
-		8378DED217CB659A00D8A0D0 /* PortsmouthDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortsmouthDefines.h; path = Portsmouth/PortsmouthDefines.h; sourceTree = SOURCE_ROOT; };
 		8378DED317CB659A00D8A0D0 /* WindowMoverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowMoverDelegate.h; path = Portsmouth/WindowMoverDelegate.h; sourceTree = SOURCE_ROOT; };
 		8378DED817CD7FEC00D8A0D0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
@@ -154,6 +163,10 @@
 		83A25999166B5B7700F7B5E5 /* BorderStyleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorderStyleValueTransformer.m; path = Portsmouth/BorderStyleValueTransformer.m; sourceTree = SOURCE_ROOT; };
 		83A2599B166B6BE300F7B5E5 /* PortsmouthColorWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortsmouthColorWell.h; path = Portsmouth/PortsmouthColorWell.h; sourceTree = SOURCE_ROOT; };
 		83A2599C166B6BE300F7B5E5 /* PortsmouthColorWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PortsmouthColorWell.m; path = Portsmouth/PortsmouthColorWell.m; sourceTree = SOURCE_ROOT; };
+		83B2C30717D6C84D00382630 /* Log4Cocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Log4Cocoa.xcodeproj; path = Log4Cocoa/Log4Cocoa.xcodeproj; sourceTree = "<group>"; };
+		83B2C31817E46C7E00382630 /* log4cocoa.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log4cocoa.properties; sourceTree = SOURCE_ROOT; };
+		83B2C31A17E46D6400382630 /* Log4CocoaInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Log4CocoaInitializer.h; path = Portsmouth/Log4CocoaInitializer.h; sourceTree = SOURCE_ROOT; };
+		83B2C31B17E46D6400382630 /* Log4CocoaInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Log4CocoaInitializer.m; path = Portsmouth/Log4CocoaInitializer.m; sourceTree = SOURCE_ROOT; };
 		83B337EE165867F50037A84A /* X11WeakLinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = X11WeakLinker.h; path = Portsmouth/X11WeakLinker.h; sourceTree = SOURCE_ROOT; };
 		83B337EF165867F50037A84A /* X11WeakLinker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = X11WeakLinker.m; path = Portsmouth/X11WeakLinker.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -163,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B2C31717D6CEA900382630 /* libLog4Cocoa.a in Frameworks */,
 				8378DEE617CD8F2B00D8A0D0 /* ShortcutRecorder.framework in Frameworks */,
 				839276741636281900DF34EE /* Carbon.framework in Frameworks */,
 				832AEE9915E1330D00E071B6 /* Cocoa.framework in Frameworks */,
@@ -188,6 +202,7 @@
 				832AEEBB15E1330E00E071B6 /* Portsmouth Tests */,
 				832AEE9715E1330D00E071B6 /* Frameworks */,
 				832AEE9515E1330D00E071B6 /* Products */,
+				83B2C30717D6C84D00382630 /* Log4Cocoa.xcodeproj */,
 				8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -265,6 +280,7 @@
 				834A3ADD163D4B40009A362C /* menuItem@2x.png */,
 				834A3ADE163D4B40009A362C /* NewIcon.icns */,
 				8378DED817CD7FEC00D8A0D0 /* LICENSE */,
+				83B2C31817E46C7E00382630 /* log4cocoa.properties */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -300,7 +316,8 @@
 				834A3ABB163D48EE009A362C /* X11Util.m */,
 				83B337EE165867F50037A84A /* X11WeakLinker.h */,
 				83B337EF165867F50037A84A /* X11WeakLinker.m */,
-				8378DED217CB659A00D8A0D0 /* PortsmouthDefines.h */,
+				83B2C31A17E46D6400382630 /* Log4CocoaInitializer.h */,
+				83B2C31B17E46D6400382630 /* Log4CocoaInitializer.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -384,6 +401,14 @@
 			name = "Value Transformers";
 			sourceTree = "<group>";
 		};
+		83B2C30817D6C84D00382630 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83B2C30C17D6C84D00382630 /* libLog4Cocoa.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		83BEBFE91624F6CE00F55B0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +480,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 83B2C30817D6C84D00382630 /* Products */;
+					ProjectRef = 83B2C30717D6C84D00382630 /* Log4Cocoa.xcodeproj */;
+				},
+				{
 					ProductGroup = 8378DEDE17CD8C3B00D8A0D0 /* Products */;
 					ProjectRef = 8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */;
 				},
@@ -482,6 +511,13 @@
 			remoteRef = 8378DEE417CD8C3B00D8A0D0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		83B2C30C17D6C84D00382630 /* libLog4Cocoa.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLog4Cocoa.a;
+			remoteRef = 83B2C30B17D6C84D00382630 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -507,6 +543,7 @@
 				832FDA66165AC50C00040876 /* menuItemHighlight.png in Resources */,
 				832FDA67165AC50C00040876 /* menuItemHighlight@2x.png in Resources */,
 				8378DED917CD7FEC00D8A0D0 /* LICENSE in Resources */,
+				83B2C31917E46C7E00382630 /* log4cocoa.properties in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +598,7 @@
 				83A2599A166B5B7700F7B5E5 /* BorderStyleValueTransformer.m in Sources */,
 				83A2599D166B6BE300F7B5E5 /* PortsmouthColorWell.m in Sources */,
 				83218A4A16C29191009C476C /* LoginItems.m in Sources */,
+				83B2C31C17E46D6400382630 /* Log4CocoaInitializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,10 +722,15 @@
 					/usr/X11/include,
 					./ShortcutRecorder/Framework,
 					./ShortcutRecorder/Framework/Source,
+					./Log4Cocoa,
 				);
 				INFOPLIST_FILE = "Portsmouth/Portsmouth-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Portsmouth;
 				WRAPPER_EXTENSION = app;
 			};
@@ -707,10 +750,15 @@
 					/usr/X11/include,
 					./ShortcutRecorder/Framework,
 					./ShortcutRecorder/Framework/Source,
+					./Log4Cocoa,
 				);
 				INFOPLIST_FILE = "Portsmouth/Portsmouth-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Portsmouth;
 				WRAPPER_EXTENSION = app;
 			};

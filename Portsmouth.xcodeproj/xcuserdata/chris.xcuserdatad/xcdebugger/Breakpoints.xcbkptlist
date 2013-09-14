@@ -626,11 +626,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Portsmouth/LoginItems.m"
-         timestampString = "399344743.45306"
+         timestampString = "400844604.783942"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "109"
-         endingLineNumber = "109"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-getApplicationLoginItemWithPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -639,11 +639,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Portsmouth/LoginItems.m"
-         timestampString = "399344743.45306"
+         timestampString = "400844604.783942"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
+         startingLineNumber = "176"
+         endingLineNumber = "176"
          landmarkName = "@implementation SessionLoginItems"
          landmarkType = "3">
       </FileBreakpoint>
@@ -723,6 +723,58 @@
          startingLineNumber = "202"
          endingLineNumber = "202"
          landmarkName = "-openModal"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Portsmouth/ASLogger.h"
+         timestampString = "399845702.412122"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
+         landmarkName = "@interface ASLogger"
+         landmarkType = "2">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Portsmouth/main.m"
+         timestampString = "400846362.661641"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
+         landmarkName = "main()"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Log4Cocoa/Log4Cocoa/L4Logger.m"
+         timestampString = "399955205.536776"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "287"
+         endingLineNumber = "287"
+         landmarkName = "-lineNumber:fileName:methodName:message:level:exception:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Log4Cocoa/Log4Cocoa/L4Logger.m"
+         timestampString = "399956795.81723"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "288"
+         endingLineNumber = "288"
+         landmarkName = "-lineNumber:fileName:methodName:message:level:exception:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

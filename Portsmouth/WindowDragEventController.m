@@ -62,7 +62,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
     @catch (NSException *exception) 
     {
         // Must be an X11 or another type of window
-        NSLog(@"Couldn't get the window via accessibility.");
+        log4Debug(@"Couldn't get the window via accessibility.");
         _focusedWindow = nil;
     }
         
@@ -87,7 +87,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
                     
                     _appElement = AXUIElementCreateApplication([currApp processIdentifier]);
                     
-                    NSLog(@"* %@ %d  %d", [currApp localizedName], [currApp processIdentifier], [NSRunningApplication currentApplication].processIdentifier);
+                    log4Debug(@"* %@ %d  %d", [currApp localizedName], [currApp processIdentifier], [NSRunningApplication currentApplication].processIdentifier);
                     
                     // Create the observer for the current process
                     // observer should be class level and removed when the mouse up occurs
@@ -108,7 +108,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
         }
         @catch (NSException *exception) 
         {
-            NSLog(@"Exception occurred attempting to perform accessibility click handler: (%@) %@", exception.name, exception.reason);
+            log4ErrorWithException(@"Exception occurred attempting to perform accessibility click handler: (%@) %@", exception, exception.name, exception.reason);
         }
         
         
@@ -122,7 +122,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
             
             if (array && [array count] > 0) {
                 
-                NSLog(@"Must be an X11 window");
+                log4Debug(@"Must be an X11 window");
                 
                 @try
                 {
@@ -144,11 +144,11 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
                         
                         _x11WindowMoved = NO;
                         
-                        NSLog(@"X11 window geometry: x: %f, y: %f", _initialWindowPosition.x, _initialWindowPosition.y);
+                        log4Debug(@"X11 window geometry: x: %f, y: %f", _initialWindowPosition.x, _initialWindowPosition.y);
                     }
                     @catch (NSException *exception)
                     {
-                        NSLog(@"Exception occurred attempting to perform X11 click handler: (%@) %@", exception.name, exception.reason);
+                        log4Debug(@"Exception occurred attempting to perform X11 click handler: (%@) %@", exception.name, exception.reason);
                     }
                     
                     
@@ -173,7 +173,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
             if (!_x11WindowMoved && 
                 (geometry.origin.x != _initialWindowPosition.x || geometry.origin.y != _initialWindowPosition.y))
             {
-                NSLog(@"X11 Window has moved: x: %f, y: %f", geometry.origin.x, geometry.origin.y);
+                log4Debug(@"X11 Window has moved: x: %f, y: %f", geometry.origin.x, geometry.origin.y);
                 _x11WindowMoved = YES;
             }
             
@@ -184,7 +184,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
         }
         @catch (NSException *exception) 
         {
-            NSLog(@"Exception occurred attempting to perform X11 drag handler: (%@) %@", exception.name, exception.reason);
+            log4ErrorWithException(@"Exception occurred attempting to perform X11 drag handler: (%@) %@", exception, exception.name, exception.reason);
         }
         
     }
@@ -192,7 +192,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
 
 -(void) globalMouseReleaseHandler 
 {
-    NSLog(@"Mouse UP!");
+    log4Debug(@"Mouse UP!");
     
     _isMouseReleased = YES;
     
@@ -214,7 +214,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
         
         if (_observer)
         {
-            NSLog(@"Freeing observer");
+            log4Debug(@"Freeing observer");
             AXObserverRemoveNotification( _observer, _appElement, kAXMovedNotification);
             CFRelease(_observer);
             _observer = nil;
@@ -222,7 +222,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
             
         if (_appElement)
         {
-            NSLog(@"Freeing appelement");
+            log4Debug(@"Freeing appelement");
             CFRelease(_appElement);
             _appElement = nil;
         }
@@ -232,7 +232,7 @@ static void windowDragCallback(AXObserverRef observer, AXUIElementRef element, C
 // pause event that does the same thing as the mouse up, but doesn't do any moving junk
 -(void)pause
 {
-    NSLog(@"WindowDragEventController is Paused...");
+    log4Debug(@"WindowDragEventController is Paused...");
     _isMouseReleased = YES;
     
     if (_x11Window)
