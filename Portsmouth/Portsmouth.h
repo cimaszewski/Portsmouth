@@ -22,9 +22,4 @@
 extern NSString *const NOTIFICATION_PAUSE_EVENTS;
 extern NSString *const NOTIFICATION_UNPAUSE_EVENTS;
 
-
-
-
-
-
 #endif

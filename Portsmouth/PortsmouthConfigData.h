@@ -38,6 +38,9 @@
     
     BOOL _defaultTopToFullScreen;
     BOOL _defaultFullScreenToLionFullScreen;
+	
+	KeyCombo _lockScreenKeyCombo;
+	KeyCombo _screenSaverKeyCombo;
 }
 
 @property BOOL isX11SupportEnabled;
@@ -56,6 +59,8 @@
 @property BOOL defaultFullScreenToLionFullScreen;
 
 @property KeyCombo keyCombo;
+@property KeyCombo lockScreenKeyCombo;
+@property KeyCombo screenSaverKeyCombo;
 
 
 @end

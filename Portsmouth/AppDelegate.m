@@ -119,8 +119,18 @@
 	KeyCombo shortcut = SRMakeKeyCombo(ShortcutRecorderEmptyCode, ShortcutRecorderEmptyFlags);
 	shortcut.code = 49;
 	shortcut.flags = NSCommandKeyMask+NSShiftKeyMask;
+
+	KeyCombo shortcutLock = SRMakeKeyCombo(ShortcutRecorderEmptyCode, ShortcutRecorderEmptyFlags);
+	shortcutLock.code = 37;
+	shortcutLock.flags = NSAlternateKeyMask+NSShiftKeyMask;
+	
+	KeyCombo saverLock = SRMakeKeyCombo(ShortcutRecorderEmptyCode, ShortcutRecorderEmptyFlags);
+	saverLock.code = 37;
+	saverLock.flags = NSCommandKeyMask+NSShiftKeyMask;
 	
 	_config.keyCombo = shortcut;
+	_config.lockScreenKeyCombo = shortcutLock;
+	_config.screenSaverKeyCombo = saverLock;
 	
     
     [NSColor setIgnoresAlpha:NO];
@@ -131,7 +141,7 @@
     
     _moverController = [[WindowMoverController alloc]initWithConfig:_config];
 	
-	
+	_hotKeyController = [[HotKeyController alloc] initWithConfig:_config andWindowMoverController:_moverController];
     
     //NSString *iconPath = [[NSBundle mainBundle] pathForResource:@"menuItem" ofType:@"tiff"];
 	_statusMenuItemIcon = [NSImage imageNamed:@"menuItem.tiff"];

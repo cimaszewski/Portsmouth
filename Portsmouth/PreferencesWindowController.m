@@ -32,6 +32,8 @@
 @synthesize hotzoneSize=_hotzoneSize;
 @synthesize borderSize=_borderSize;
 @synthesize shortcutRecorder=_shortcutRecorder;
+@synthesize lockScreenRecorder=_lockScreenRecorder;
+@synthesize screenSaverRecorder=_screenSaverRecorder;
 @synthesize version=_version;
 
 NSString *const PORTSMOUTH_VERSION = @"1.0b";
@@ -43,6 +45,13 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
 	
 	[_shortcutRecorder setAllowsKeyOnly:NO escapeKeysRecord:NO];
 	[_shortcutRecorder setKeyCombo:_config.keyCombo];
+	
+	[_lockScreenRecorder setAllowsKeyOnly:NO escapeKeysRecord:NO];
+	[_lockScreenRecorder setKeyCombo:_config.lockScreenKeyCombo];
+	
+	[_screenSaverRecorder setAllowsKeyOnly:NO escapeKeysRecord:NO];
+	[_screenSaverRecorder setKeyCombo:_config.screenSaverKeyCombo];
+	
 	[_version setStringValue:[NSString stringWithFormat:@"Version: %@", PORTSMOUTH_VERSION]];
 
 }
@@ -136,11 +145,33 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
 		shortcut.code = [settings integerForKey:@"keyCombo.code"];
 		shortcut.flags = [settings integerForKey:@"keyCombo.flags"];
 		_config.keyCombo = shortcut;
+	} else {
+		_config.keyCombo = _defaultConfig.keyCombo;
+	}
+	
+	if([settings objectForKey:@"screenSaverKeyCombo.code"] != nil && [settings objectForKey:@"screenSaverKeyCombo.flags"] != nil) {
+		KeyCombo shortcut = SRMakeKeyCombo(ShortcutRecorderEmptyCode, ShortcutRecorderEmptyFlags);
+		shortcut.code = [settings integerForKey:@"screenSaverKeyCombo.code"];
+		shortcut.flags = [settings integerForKey:@"screenSaverKeyCombo.flags"];
+		_config.screenSaverKeyCombo = shortcut;
+	} else {
+		_config.screenSaverKeyCombo = _defaultConfig.screenSaverKeyCombo;
+	}
+	
+	if([settings objectForKey:@"lockScreenKeyCombo.code"] != nil && [settings objectForKey:@"lockScreenKeyCombo.flags"] != nil) {
+		KeyCombo shortcut = SRMakeKeyCombo(ShortcutRecorderEmptyCode, ShortcutRecorderEmptyFlags);
+		shortcut.code = [settings integerForKey:@"lockScreenKeyCombo.code"];
+		shortcut.flags = [settings integerForKey:@"lockScreenKeyCombo.flags"];
+		_config.lockScreenKeyCombo = shortcut;
+	} else {
+		_config.lockScreenKeyCombo = _defaultConfig.lockScreenKeyCombo;
 	}
 	
 	[_hotzoneSize setStringValue:[NSString stringWithFormat:@"%d%%", (int)(_config.hotzoneWidthPercentage*100)]];
     [_borderSize setStringValue:[NSString stringWithFormat:@"%d", (int)(_config.borderWidth)]];
 	[_shortcutRecorder setKeyCombo:_config.keyCombo];
+	[_lockScreenRecorder setKeyCombo:_config.lockScreenKeyCombo];
+	[_screenSaverRecorder setKeyCombo:_config.screenSaverKeyCombo];
 }
 
 -(void)saveConfig
@@ -169,6 +200,13 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
 	[settings setInteger:_config.keyCombo.code forKey:@"keyCombo.code"];
 	[settings setInteger:_config.keyCombo.flags forKey:@"keyCombo.flags"];
 	
+	[settings setInteger:_config.lockScreenKeyCombo.code forKey:@"lockScreenKeyCombo.code"];
+	[settings setInteger:_config.lockScreenKeyCombo.flags forKey:@"lockScreenKeyCombo.flags"];
+	
+	[settings setInteger:_config.screenSaverKeyCombo.code forKey:@"screenSaverKeyCombo.code"];
+	[settings setInteger:_config.screenSaverKeyCombo.flags forKey:@"screenSaverKeyCombo.flags"];
+	
+	
 	[settings synchronize];
 
 }
@@ -186,11 +224,16 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
     [_config setOverlayBorderColor:[_defaultConfig.overlayBorderColor copy]];
     [_config setDisplayTargetOverlay:_defaultConfig.displayTargetOverlay];
 	[_config setKeyCombo:_defaultConfig.keyCombo];
+	[_config setLockScreenKeyCombo:_defaultConfig.lockScreenKeyCombo];
+	[_config setScreenSaverKeyCombo:_defaultConfig.screenSaverKeyCombo];
 	[self setShouldStartAtLogin:NO];
     
     [_hotzoneSize setStringValue:[NSString stringWithFormat:@"%d%%", (int)(_config.hotzoneWidthPercentage*100)]];
     [_borderSize setStringValue:[NSString stringWithFormat:@"%d", (int)(_config.borderWidth)]];
 	[_shortcutRecorder setKeyCombo:_config.keyCombo];
+	
+	[_lockScreenRecorder setKeyCombo:_config.lockScreenKeyCombo];
+	[_screenSaverRecorder setKeyCombo:_config.screenSaverKeyCombo];
 }
 
 - (BOOL)shouldStartAtLogin {
@@ -258,7 +301,18 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo
 {
 	// no work to do, the value is bound in IB
-	_config.keyCombo = newKeyCombo;
+	if (aRecorder == _shortcutRecorder)
+	{
+		_config.keyCombo = newKeyCombo;
+	}
+	else if (aRecorder == _lockScreenRecorder)
+	{
+		_config.lockScreenKeyCombo = newKeyCombo;
+	}
+	else if (aRecorder == _screenSaverRecorder)
+	{
+		_config.screenSaverKeyCombo = newKeyCombo;
+	}
 }
 
 @end

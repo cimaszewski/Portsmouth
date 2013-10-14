@@ -10,6 +10,8 @@
 		8317CD331650B7DC008E9675 /* center_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8317CD311650B7DC008E9675 /* center_alt.png */; };
 		8317CD341650B7DC008E9675 /* center_alt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8317CD321650B7DC008E9675 /* center_alt@2x.png */; };
 		83218A4A16C29191009C476C /* LoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 83218A4916C29191009C476C /* LoginItems.m */; };
+		8325DBFE180AE37D002F9810 /* HotKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325DBFD180AE37D002F9810 /* HotKeyController.m */; };
+		8325DC03180AE9B9002F9810 /* Portsmouth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325DC02180AE9B9002F9810 /* Portsmouth.m */; };
 		832AEE9915E1330D00E071B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832AEE9815E1330D00E071B6 /* Cocoa.framework */; };
 		832AEEB715E1330E00E071B6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832AEEB615E1330E00E071B6 /* SenTestingKit.framework */; };
 		832AEEB815E1330E00E071B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832AEE9815E1330D00E071B6 /* Cocoa.framework */; };
@@ -93,6 +95,9 @@
 		8317CD321650B7DC008E9675 /* center_alt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_alt@2x.png"; sourceTree = SOURCE_ROOT; };
 		83218A4816C29190009C476C /* LoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItems.h; path = Portsmouth/LoginItems.h; sourceTree = SOURCE_ROOT; };
 		83218A4916C29191009C476C /* LoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItems.m; path = Portsmouth/LoginItems.m; sourceTree = SOURCE_ROOT; };
+		8325DBFC180AE37D002F9810 /* HotKeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotKeyController.h; path = Portsmouth/HotKeyController.h; sourceTree = SOURCE_ROOT; };
+		8325DBFD180AE37D002F9810 /* HotKeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotKeyController.m; path = Portsmouth/HotKeyController.m; sourceTree = SOURCE_ROOT; };
+		8325DC02180AE9B9002F9810 /* Portsmouth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Portsmouth.m; sourceTree = SOURCE_ROOT; };
 		832AEE9415E1330D00E071B6 /* Portsmouth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portsmouth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		832AEE9815E1330D00E071B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		832AEE9B15E1330D00E071B6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -338,6 +343,8 @@
 				839D42DB163E0E4B00C5EFFF /* PausableController.h */,
 				839D42DC163E0E4B00C5EFFF /* PausableController.m */,
 				8378DED317CB659A00D8A0D0 /* WindowMoverDelegate.h */,
+				8325DBFC180AE37D002F9810 /* HotKeyController.h */,
+				8325DBFD180AE37D002F9810 /* HotKeyController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -388,6 +395,7 @@
 			children = (
 				8378DED117CB659A00D8A0D0 /* Portsmouth.h */,
 				834A3AB5163D48EE009A362C /* WindowTargetConstants.h */,
+				8325DC02180AE9B9002F9810 /* Portsmouth.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -582,10 +590,12 @@
 				834A3ABD163D48EE009A362C /* AccessibilityUtil.m in Sources */,
 				834A3ABE163D48EE009A362C /* main.m in Sources */,
 				834A3AC0163D48EE009A362C /* PortsmouthConfigData.m in Sources */,
+				8325DBFE180AE37D002F9810 /* HotKeyController.m in Sources */,
 				834A3AC2163D48EE009A362C /* PreferencesWindowController.m in Sources */,
 				834A3AC3163D48EE009A362C /* RoundedCornerOverlayWindow.m in Sources */,
 				834A3AC4163D48EE009A362C /* WindowDragEventController.m in Sources */,
 				834A3AC5163D48EE009A362C /* WindowHotzoneData.m in Sources */,
+				8325DC03180AE9B9002F9810 /* Portsmouth.m in Sources */,
 				834A3AC6163D48EE009A362C /* WindowMoverCell.m in Sources */,
 				834A3AC7163D48EE009A362C /* WindowMoverController.m in Sources */,
 				834A3AC8163D48EE009A362C /* WindowMoverView.m in Sources */,

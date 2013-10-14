@@ -29,6 +29,8 @@
     NSTextField *_hotzoneSize;
     NSTextField *_borderSize;
 	SRRecorderControl *_shortcutRecorder;
+	SRRecorderControl *_screenSaverRecorder;
+	SRRecorderControl *_lockScreenRecorder;
 	NSTextField *_version;
 }
 
@@ -38,6 +40,8 @@
 @property IBOutlet NSTextField *hotzoneSize;
 @property IBOutlet NSTextField *borderSize;
 @property IBOutlet SRRecorderControl *shortcutRecorder;
+@property IBOutlet SRRecorderControl *screenSaverRecorder;
+@property IBOutlet SRRecorderControl *lockScreenRecorder;
 @property BOOL shouldStartAtLogin;
 @property IBOutlet NSTextField *version;
 

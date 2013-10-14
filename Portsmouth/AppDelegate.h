@@ -20,6 +20,7 @@
 #import "WindowSnapController.h"
 #import "PreferencesWindowController.h"
 #import "WindowMoverController.h"
+#import "HotKeyController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
 @private
@@ -30,6 +31,7 @@
     PortsmouthConfigData *_config;
     PreferencesWindowController *_preferencesController;
     WindowMoverController *_moverController;
+	HotKeyController *_hotKeyController;
     
     NSMenu *_statusMenu;
 	NSStatusItem *_statusItem;

@@ -21,6 +21,7 @@
 #import "WindowMoverView.h"
 #import "AccessibilityUtil.h"
 #import "X11Util.h"
+#import "Portsmouth.h"
 
 @implementation WindowMoverController
 
@@ -29,42 +30,8 @@
 @synthesize window = _window;
 @synthesize isWindowSelected = _isWindowSelected;
 
-OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
-                       void *userData)
-{
-    WindowMoverController* controller = (__bridge WindowMoverController *)userData;
-    
-    if(GetEventKind(theEvent) == kEventHotKeyPressed)
-    {
-            EventHotKeyID hkCom;
-            GetEventParameter(theEvent,kEventParamDirectObject,typeEventHotKeyID,NULL,
-                              sizeof(hkCom),NULL,&hkCom);
-            int l = hkCom.id;
-        
-            if (l == 1)
-            {
-                [controller openModal];
-            }
-    
-    }
-    else if(GetEventKind(theEvent) == kEventHotKeyReleased)
-    {
-        if (!controller.isWindowSelected)
-        {
-            EventHotKeyID hkCom;
-            GetEventParameter(theEvent,kEventParamDirectObject,typeEventHotKeyID,NULL,
-                              sizeof(hkCom),NULL,&hkCom);
-            int l = hkCom.id;
-            
-            if (l == 1)
-            {
-                [controller closeModalWithSelection:NO];
-            }
-        }
-    }
-    
-    return noErr;
-}
+//int count = 0;
+
 
 
 
@@ -76,43 +43,11 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
     }
     
     
-    _selfRef = CFBridgingRetain(self);
-    
-	_config = configuration;
-    
-    const EventTypeSpec hotKeyEvents[] = {{kEventClassKeyboard,kEventHotKeyPressed},{kEventClassKeyboard,kEventHotKeyReleased}};
-    InstallApplicationEventHandler(NewEventHandlerUPP(hotKeyHandler),GetEventTypeCount(hotKeyEvents),hotKeyEvents,(void*)_selfRef,NULL);
-    
-    [self setupHotKeyBinding];
-    
+   
     return self;
 }
 
 
-
--(void)setupHotKeyBinding
-{
-	if (_showModalHotKeyRef == nil && _config != nil && _config.keyCombo.code != 0 && _config.keyCombo.flags != 0)
-	{
-		_hotKeyID.signature='smhk';
-		_hotKeyID.id=1;
-	
-		RegisterEventHotKey((UInt32)_config.keyCombo.code, (UInt32)SRCocoaToCarbonFlags(_config.keyCombo.flags), _hotKeyID,
-                        GetApplicationEventTarget(), 0, &_showModalHotKeyRef);
-	}
-}
-
--(void)removeHotKeyBinding
-{
-    if (_showModalHotKeyRef)
-    {
-        OSStatus error = UnregisterEventHotKey(_showModalHotKeyRef);
-        if(error){
-            //handle error
-        }
-        _showModalHotKeyRef = nil;
-    }
-}
 
 -(void) moveSelectionWithArrowKey:(ArrowKey) direction
 {
@@ -368,7 +303,6 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
 -(void)pause
 {
     log4Debug(@"WindowMoverController is Paused...");
-    [self removeHotKeyBinding];
     if (_pauseCounter > 1)
     {
         [self closeModalWithSelection:NO];
@@ -378,7 +312,6 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
 -(void)unpause
 {
     log4Debug(@"WindowMoverController is unPaused...");
-    [self setupHotKeyBinding];
 }
 
 -(void) closeModalWithSelection:(Boolean) isSelected
@@ -400,6 +333,7 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
     @finally
     {
         [_window setFrame:NSZeroRect display:NO];
+		[_window setContentView:nil];
         _window = nil;
         _view = nil;
         _targetController = nil;
@@ -437,15 +371,6 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
     [self closeModalWithSelection:YES];
 }
 
--(void) dealloc
-{
-    if (_selfRef)
-    {
-        CFBridgingRelease(_selfRef);
-    }
-    
-    [self removeHotKeyBinding];
-}
 
 
 

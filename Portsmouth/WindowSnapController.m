@@ -49,10 +49,11 @@
 -(void)performEventForWindowDrag
 {
     // if the mouse has already been released (this is due to an issue where the drag event is fired after the release
-    if (_isMouseReleased)
+    /*
+	if (_isMouseReleased)
     {
         return;
-    }
+    }*/
     
     _escapeEventMonitor = [NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask)
                                                                 handler:^(NSEvent *incomingEvent)

@@ -28,6 +28,8 @@
 @synthesize cornerRadius=_cornerRadius;
 @synthesize borderWidth=_borderWidth;
 @synthesize keyCombo=_keyCombo;
+@synthesize lockScreenKeyCombo=_lockScreenKeyCombo;
+@synthesize screenSaverKeyCombo=_screenSaverKeyCombo;
 
 @synthesize hotzoneWidthPercentage=_hotzoneWidthPercentage;
 //@synthesize hotzoneHeightPercentage=_hotzoneHeightPercentage;
@@ -52,6 +54,8 @@
     [copy setOverlayBorderColor:[_overlayBorderColor copyWithZone:zone]];
     [copy setDisplayTargetOverlay:_displayTargetOverlay];
     [copy setKeyCombo:_keyCombo];
+	[copy setLockScreenKeyCombo:_lockScreenKeyCombo];
+	[copy setScreenSaverKeyCombo:_screenSaverKeyCombo];
 	
     return copy;
 }
