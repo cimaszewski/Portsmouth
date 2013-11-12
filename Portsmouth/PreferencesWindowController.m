@@ -20,7 +20,6 @@
 #import "Portsmouth.h"
 #import "RoundedCornerOverlayWindow.h"
 #import "WindowHotzoneData.h"
-#import "LoginItems.h"
 
 @interface PreferencesWindowController ()
 
@@ -37,6 +36,16 @@
 @synthesize version=_version;
 
 NSString *const PORTSMOUTH_VERSION = @"1.0b";
+
+static void loginItemsChanged(LSSharedFileListRef listRef, void *context)
+{
+    PreferencesWindowController *controller = (__bridge PreferencesWindowController *)(context);
+	
+    // Emit change notification. We can't do will/did
+    // around the change but this will have to do.
+    [controller willChangeValueForKey:@"shouldStartAtLogin"];
+    [controller didChangeValueForKey:@"shouldStartAtLogin"];
+}
 
 -(void) windowDidLoad
 {
@@ -237,13 +246,63 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
 }
 
 - (BOOL)shouldStartAtLogin {
-	NSString *path = [[NSBundle mainBundle] bundlePath];
-	return [[LoginItems sharedSessionLoginItems] isInLoginItemsApplicationWithPath:path];
+	Boolean foundIt=false;
+	if (_loginItems) {
+		NSURL *itemURL=[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+		UInt32 seed = 0U;
+		NSArray *currentLoginItems = (__bridge NSArray *)(LSSharedFileListCopySnapshot(_loginItems, &seed));
+		for (id itemObject in currentLoginItems) {
+			LSSharedFileListItemRef item = (__bridge LSSharedFileListItemRef)itemObject;
+			
+			UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
+			CFURLRef URL = NULL;
+			OSStatus err = LSSharedFileListItemResolve(item, resolutionFlags, &URL, /*outRef*/ NULL);
+			if (err == noErr) {
+				foundIt = CFEqual(URL, (__bridge CFTypeRef)(itemURL));
+				CFRelease(URL);
+				
+				if (foundIt)
+					break;
+			}
+		}
+	}
+	return (BOOL)foundIt;
 }
 
-- (void)setShouldStartAtLogin:(BOOL)flag {
-	NSString *path = [[NSBundle mainBundle] bundlePath];
-	[[LoginItems sharedSessionLoginItems] toggleApplicationInLoginItemsWithPath:path enabled:flag];
+- (void)setShouldStartAtLogin:(BOOL)enabled {
+	if (_loginItems) {
+		[self willChangeValueForKey:@"shouldStartAtLogin"];
+		NSURL *itemURL=[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+		
+		LSSharedFileListItemRef existingItem = NULL;
+		
+		UInt32 seed = 0U;
+		NSArray *currentLoginItems = (__bridge NSArray *)(LSSharedFileListCopySnapshot(_loginItems, &seed));
+		for (id itemObject in currentLoginItems) {
+			LSSharedFileListItemRef item = (__bridge LSSharedFileListItemRef)itemObject;
+			
+			UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
+			CFURLRef URL = NULL;
+			OSStatus err = LSSharedFileListItemResolve(item, resolutionFlags, &URL, /*outRef*/ NULL);
+			if (err == noErr) {
+				Boolean foundIt = CFEqual(URL, (__bridge CFTypeRef)(itemURL));
+				CFRelease(URL);
+				
+				if (foundIt) {
+					existingItem = item;
+					break;
+				}
+			}
+		}
+		
+		if (enabled && (existingItem == NULL)) {
+			LSSharedFileListInsertItemURL(_loginItems, kLSSharedFileListItemBeforeFirst,
+										  NULL, NULL, (__bridge CFURLRef)itemURL, NULL, NULL);
+			
+		} else if (!enabled && (existingItem != NULL))
+			LSSharedFileListItemRemove(_loginItems, existingItem);
+		[self didChangeValueForKey:@"shouldStartAtLogin"];
+	}
 }
 
 -(IBAction)changeHotZoneSize:(id)sender
@@ -264,6 +323,19 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
     
 }
 
+// Remove login items list observer.
+- (void)cleanup
+{
+	if (_loginItems) {
+		NSLog(@"loginitem cleanup");
+		LSSharedFileListRemoveObserver(_loginItems,
+									   CFRunLoopGetMain(),
+									   kCFRunLoopCommonModes,
+									   loginItemsChanged,
+									   (__bridge void *)(self));
+	}
+}
+
 -(id)initWithConfig:(PortsmouthConfigData *)configuration
 {
     if (![super initWithWindowNibName:@"PreferencesWindow"]) {
@@ -274,6 +346,23 @@ NSString *const PORTSMOUTH_VERSION = @"1.0b";
     _defaultConfig = [configuration copy];
 	
 	[self loadConfig];
+	
+	_loginItems = (LSSharedFileListRef)LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+	if (_loginItems) {
+		// Add an observer so we can update the UI if changed externally.
+		LSSharedFileListAddObserver(_loginItems,
+									CFRunLoopGetMain(),
+									kCFRunLoopCommonModes,
+									loginItemsChanged,
+									(__bridge void *)(self));
+		log4Debug(@"Loginitem init ok");
+	}
+	
+	// Add cleanup routine for application termination.
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(cleanup)
+												 name:NSApplicationWillTerminateNotification
+											   object:nil];
     
     return self;
 }

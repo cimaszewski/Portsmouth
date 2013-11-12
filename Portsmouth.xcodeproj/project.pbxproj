@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8317CD331650B7DC008E9675 /* center_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8317CD311650B7DC008E9675 /* center_alt.png */; };
 		8317CD341650B7DC008E9675 /* center_alt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8317CD321650B7DC008E9675 /* center_alt@2x.png */; };
-		83218A4A16C29191009C476C /* LoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 83218A4916C29191009C476C /* LoginItems.m */; };
 		8325DBFE180AE37D002F9810 /* HotKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325DBFD180AE37D002F9810 /* HotKeyController.m */; };
 		8325DC03180AE9B9002F9810 /* Portsmouth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325DC02180AE9B9002F9810 /* Portsmouth.m */; };
 		832AEE9915E1330D00E071B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832AEE9815E1330D00E071B6 /* Cocoa.framework */; };
@@ -48,16 +47,33 @@
 		834A3AE7163D4B40009A362C /* NewIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 834A3ADE163D4B40009A362C /* NewIcon.icns */; };
 		834A3AF1163D4CE9009A362C /* PortsmouthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A3AEB163D4B77009A362C /* PortsmouthTests.m */; };
 		8378DED917CD7FEC00D8A0D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8378DED817CD7FEC00D8A0D0 /* LICENSE */; };
-		8378DEE617CD8F2B00D8A0D0 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8378DEE317CD8C3B00D8A0D0 /* ShortcutRecorder.framework */; };
 		839276741636281900DF34EE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839276731636281900DF34EE /* Carbon.framework */; };
 		839D42DE163E154400C5EFFF /* PausableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D42DC163E0E4B00C5EFFF /* PausableController.m */; };
 		83A2599A166B5B7700F7B5E5 /* BorderStyleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A25999166B5B7700F7B5E5 /* BorderStyleValueTransformer.m */; };
 		83A2599D166B6BE300F7B5E5 /* PortsmouthColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2599C166B6BE300F7B5E5 /* PortsmouthColorWell.m */; };
-		83B2C31717D6CEA900382630 /* libLog4Cocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B2C30C17D6C84D00382630 /* libLog4Cocoa.a */; };
 		83B2C31917E46C7E00382630 /* log4cocoa.properties in Resources */ = {isa = PBXBuildFile; fileRef = 83B2C31817E46C7E00382630 /* log4cocoa.properties */; };
 		83B2C31C17E46D6400382630 /* Log4CocoaInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2C31B17E46D6400382630 /* Log4CocoaInitializer.m */; };
 		83B337F0165867F50037A84A /* X11WeakLinker.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B337EF165867F50037A84A /* X11WeakLinker.m */; };
+		83DE27711825106700B2B17B /* libLog4Cocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DE276A18250B7B00B2B17B /* libLog4Cocoa.a */; };
+		83DE2773182510B800B2B17B /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8378DEE317CD8C3B00D8A0D0 /* ShortcutRecorder.framework */; };
+		83DE2774182510BE00B2B17B /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8378DEE317CD8C3B00D8A0D0 /* ShortcutRecorder.framework */; };
+		83DE277818251B5300B2B17B /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DE277718251B5300B2B17B /* ScriptingBridge.framework */; };
+		83DE277B18251CC500B2B17B /* System Preferences.app in Resources */ = {isa = PBXBuildFile; fileRef = 83DE277A18251CC500B2B17B /* System Preferences.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		83DE277918251C1D00B2B17B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		832AEEB915E1330E00E071B6 /* PBXContainerItemProxy */ = {
@@ -66,6 +82,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 832AEE9315E1330D00E071B6;
 			remoteInfo = "Target Practice";
+		};
+		836A78AC1825079400D38DB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8378DEDD17CD8C3B00D8A0D0 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9398377F0DA42965007F53F3;
+			remoteInfo = ShortcutRecorder.framework;
 		};
 		8378DEE217CD8C3B00D8A0D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -81,20 +104,38 @@
 			remoteGlobalIDString = 93983B220DA43C4E007F53F3;
 			remoteInfo = ShortcutRecorder_Tester;
 		};
-		83B2C30B17D6C84D00382630 /* PBXContainerItemProxy */ = {
+		83DE276918250B7B00B2B17B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83B2C30717D6C84D00382630 /* Log4Cocoa.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0D5B4EF114C36987008A00B6;
 			remoteInfo = Log4Cocoa;
 		};
+		83DE276C18250C1900B2B17B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83B2C30717D6C84D00382630 /* Log4Cocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D5B4EF014C36987008A00B6;
+			remoteInfo = Log4Cocoa;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83DE276F18250E2100B2B17B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				83DE2774182510BE00B2B17B /* ShortcutRecorder.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8317CD311650B7DC008E9675 /* center_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center_alt.png; sourceTree = SOURCE_ROOT; };
 		8317CD321650B7DC008E9675 /* center_alt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_alt@2x.png"; sourceTree = SOURCE_ROOT; };
-		83218A4816C29190009C476C /* LoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItems.h; path = Portsmouth/LoginItems.h; sourceTree = SOURCE_ROOT; };
-		83218A4916C29191009C476C /* LoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItems.m; path = Portsmouth/LoginItems.m; sourceTree = SOURCE_ROOT; };
 		8325DBFC180AE37D002F9810 /* HotKeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotKeyController.h; path = Portsmouth/HotKeyController.h; sourceTree = SOURCE_ROOT; };
 		8325DBFD180AE37D002F9810 /* HotKeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotKeyController.m; path = Portsmouth/HotKeyController.m; sourceTree = SOURCE_ROOT; };
 		8325DC02180AE9B9002F9810 /* Portsmouth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Portsmouth.m; sourceTree = SOURCE_ROOT; };
@@ -174,6 +215,9 @@
 		83B2C31B17E46D6400382630 /* Log4CocoaInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Log4CocoaInitializer.m; path = Portsmouth/Log4CocoaInitializer.m; sourceTree = SOURCE_ROOT; };
 		83B337EE165867F50037A84A /* X11WeakLinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = X11WeakLinker.h; path = Portsmouth/X11WeakLinker.h; sourceTree = SOURCE_ROOT; };
 		83B337EF165867F50037A84A /* X11WeakLinker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = X11WeakLinker.m; path = Portsmouth/X11WeakLinker.m; sourceTree = SOURCE_ROOT; };
+		83DE277518251A6800B2B17B /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		83DE277718251B5300B2B17B /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		83DE277A18251CC500B2B17B /* System Preferences.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "System Preferences.app"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +225,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B2C31717D6CEA900382630 /* libLog4Cocoa.a in Frameworks */,
-				8378DEE617CD8F2B00D8A0D0 /* ShortcutRecorder.framework in Frameworks */,
+				83DE277818251B5300B2B17B /* ScriptingBridge.framework in Frameworks */,
+				83DE2773182510B800B2B17B /* ShortcutRecorder.framework in Frameworks */,
+				83DE27711825106700B2B17B /* libLog4Cocoa.a in Frameworks */,
 				839276741636281900DF34EE /* Carbon.framework in Frameworks */,
 				832AEE9915E1330D00E071B6 /* Cocoa.framework in Frameworks */,
 			);
@@ -203,6 +248,7 @@
 		832AEE8915E1330D00E071B6 = {
 			isa = PBXGroup;
 			children = (
+				83DE277A18251CC500B2B17B /* System Preferences.app */,
 				832AEE9E15E1330D00E071B6 /* Portsmouth */,
 				832AEEBB15E1330E00E071B6 /* Portsmouth Tests */,
 				832AEE9715E1330D00E071B6 /* Frameworks */,
@@ -224,6 +270,8 @@
 		832AEE9715E1330D00E071B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83DE277718251B5300B2B17B /* ScriptingBridge.framework */,
+				83DE277518251A6800B2B17B /* PreferencePanes.framework */,
 				839276731636281900DF34EE /* Carbon.framework */,
 				832AEE9815E1330D00E071B6 /* Cocoa.framework */,
 				832AEEB615E1330E00E071B6 /* SenTestingKit.framework */,
@@ -313,8 +361,6 @@
 		832AEEF015E134E400E071B6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				83218A4816C29190009C476C /* LoginItems.h */,
-				83218A4916C29191009C476C /* LoginItems.m */,
 				834A3A9C163D48EE009A362C /* AccessibilityUtil.h */,
 				834A3A9D163D48EE009A362C /* AccessibilityUtil.m */,
 				834A3ABA163D48EE009A362C /* X11Util.h */,
@@ -409,14 +455,6 @@
 			name = "Value Transformers";
 			sourceTree = "<group>";
 		};
-		83B2C30817D6C84D00382630 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				83B2C30C17D6C84D00382630 /* libLog4Cocoa.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		83BEBFE91624F6CE00F55B0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +466,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		83DE276618250B7B00B2B17B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83DE276A18250B7B00B2B17B /* libLog4Cocoa.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -436,12 +482,16 @@
 			buildConfigurationList = 832AEEC615E1330E00E071B6 /* Build configuration list for PBXNativeTarget "Portsmouth" */;
 			buildPhases = (
 				832AEE9215E1330D00E071B6 /* Resources */,
+				83DE276F18250E2100B2B17B /* CopyFiles */,
 				832AEE9015E1330D00E071B6 /* Sources */,
 				832AEE9115E1330D00E071B6 /* Frameworks */,
 			);
 			buildRules = (
+				83DE277918251C1D00B2B17B /* PBXBuildRule */,
 			);
 			dependencies = (
+				83DE276D18250C1900B2B17B /* PBXTargetDependency */,
+				836A78AD1825079400D38DB9 /* PBXTargetDependency */,
 			);
 			name = Portsmouth;
 			productName = "Target Practice";
@@ -488,7 +538,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 83B2C30817D6C84D00382630 /* Products */;
+					ProductGroup = 83DE276618250B7B00B2B17B /* Products */;
 					ProjectRef = 83B2C30717D6C84D00382630 /* Log4Cocoa.xcodeproj */;
 				},
 				{
@@ -519,11 +569,11 @@
 			remoteRef = 8378DEE417CD8C3B00D8A0D0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		83B2C30C17D6C84D00382630 /* libLog4Cocoa.a */ = {
+		83DE276A18250B7B00B2B17B /* libLog4Cocoa.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libLog4Cocoa.a;
-			remoteRef = 83B2C30B17D6C84D00382630 /* PBXContainerItemProxy */;
+			remoteRef = 83DE276918250B7B00B2B17B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -533,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83DE277B18251CC500B2B17B /* System Preferences.app in Resources */,
 				834A3AC1163D48EE009A362C /* PreferencesWindow.xib in Resources */,
 				834A3AD1163D4A7D009A362C /* Credits.rtf in Resources */,
 				834A3AD2163D4A7D009A362C /* InfoPlist.strings in Resources */,
@@ -607,7 +658,6 @@
 				83B337F0165867F50037A84A /* X11WeakLinker.m in Sources */,
 				83A2599A166B5B7700F7B5E5 /* BorderStyleValueTransformer.m in Sources */,
 				83A2599D166B6BE300F7B5E5 /* PortsmouthColorWell.m in Sources */,
-				83218A4A16C29191009C476C /* LoginItems.m in Sources */,
 				83B2C31C17E46D6400382630 /* Log4CocoaInitializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,6 +677,16 @@
 			isa = PBXTargetDependency;
 			target = 832AEE9315E1330D00E071B6 /* Portsmouth */;
 			targetProxy = 832AEEB915E1330E00E071B6 /* PBXContainerItemProxy */;
+		};
+		836A78AD1825079400D38DB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ShortcutRecorder.framework;
+			targetProxy = 836A78AC1825079400D38DB9 /* PBXContainerItemProxy */;
+		};
+		83DE276D18250C1900B2B17B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Log4Cocoa;
+			targetProxy = 83DE276C18250C1900B2B17B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -735,6 +795,7 @@
 					./Log4Cocoa,
 				);
 				INFOPLIST_FILE = "Portsmouth/Portsmouth-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -763,6 +824,7 @@
 					./Log4Cocoa,
 				);
 				INFOPLIST_FILE = "Portsmouth/Portsmouth-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

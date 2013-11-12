@@ -32,6 +32,7 @@
 	SRRecorderControl *_screenSaverRecorder;
 	SRRecorderControl *_lockScreenRecorder;
 	NSTextField *_version;
+	LSSharedFileListRef _loginItems;
 }
 
 

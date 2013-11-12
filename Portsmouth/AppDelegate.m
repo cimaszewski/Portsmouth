@@ -61,44 +61,97 @@
     //[self.window setFrame:NSZeroRect display:NO animate:NO];
     
     // Insert code here to initialize your application
-    if (!AXAPIEnabled())
-    {
-        
-        NSAlert *accessAlert = [[NSAlert alloc] init];
-        
-        [accessAlert setAlertStyle:NSWarningAlertStyle];
-        [accessAlert setMessageText:@"Portsmouth requires that the Accessibility API be enabled."];
-        [accessAlert setInformativeText:@"Would you like to launch System Preferences so that you can turn on \"Enable access for assistive devices\"?"];
-        [accessAlert addButtonWithTitle:@"Open System Preferences"];
-        [accessAlert addButtonWithTitle:@"Continue Anyway"];
-        [accessAlert addButtonWithTitle:@"Quit Portsmouth"];
-        
-        NSInteger result = [accessAlert runModal];
-        
-        switch (result)
-        {
-            case NSAlertFirstButtonReturn:
-            {
-                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSPreferencePanesDirectory, NSSystemDomainMask, YES);
-                if ([paths count] == 1) {
-                    NSURL *prefPaneURL = [NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"UniversalAccessPref.prefPane"]];
-                    [[NSWorkspace sharedWorkspace] openURL:prefPaneURL];
-                }
-            }
-                break;
-                
-            case NSAlertThirdButtonReturn:
-                [NSApp terminate:self];
-                return;
-                break;
-                
-            case NSAlertSecondButtonReturn: // just continue
-            default:
-                break;
-                
-                
-        }
+
+	
+	if (AXIsProcessTrustedWithOptions == NULL)
+	{
+		if (!AXAPIEnabled())
+		{
+			
+			NSAlert *accessAlert = [[NSAlert alloc] init];
+			
+			[accessAlert setAlertStyle:NSWarningAlertStyle];
+			[accessAlert setMessageText:@"Portsmouth requires that the Accessibility API be enabled."];
+			[accessAlert setInformativeText:@"Would you like to launch System Preferences so that you can turn on \"Enable access for assistive devices\"?"];
+			[accessAlert addButtonWithTitle:@"Open System Preferences"];
+			[accessAlert addButtonWithTitle:@"Quit Portsmouth"];
+			
+			NSInteger result = [accessAlert runModal];
+			
+			switch (result)
+			{
+				case NSAlertFirstButtonReturn:
+				{
+					NSArray *paths = NSSearchPathForDirectoriesInDomains(NSPreferencePanesDirectory, NSSystemDomainMask, YES);
+					if ([paths count] == 1) {
+						NSURL *prefPaneURL = [NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"UniversalAccessPref.prefPane"]];
+						[[NSWorkspace sharedWorkspace] openURL:prefPaneURL];
+					}
+				}
+					break;
+					
+				case NSAlertSecondButtonReturn:
+					[NSApp terminate:self];
+					return;
+					break;
+					
+			}
+			
+		}
+		
     }
+	else
+	{
+		if (!AXAPIEnabled())
+		{
+			
+			NSAlert *accessAlert = [[NSAlert alloc] init];
+			
+			[accessAlert setAlertStyle:NSWarningAlertStyle];
+			[accessAlert setMessageText:@"Portsmouth requires that the Accessibility API be enabled."];
+			[accessAlert setInformativeText:@"Would you like to launch System Preferences so that you can allow Portsmouth to control your computer via Accessibility controls?"];
+			[accessAlert addButtonWithTitle:@"Open System Preferences"];
+			[accessAlert addButtonWithTitle:@"Quit Portsmouth"];
+			
+			NSInteger result = [accessAlert runModal];
+			
+			switch (result)
+			{
+				case NSAlertFirstButtonReturn:
+				{
+					//Get a reference we can use to send scripting messages to System Preferences.
+					//This will not launch the application or establish a connection to it until we start sending it commands.
+					SystemPreferencesApplication *prefsApp = [SBApplication applicationWithBundleIdentifier: @"com.apple.systempreferences"];
+					
+					//Tell the scripting bridge wrapper not to block this thread while waiting for replies from the other process.
+					//(The commands we'll be sending it don't have return values that we care about.)
+					prefsApp.sendMode = kAENoReply;
+					
+					//Get a reference to the accessibility anchor within the Security & Privacy pane.
+					//If the pane or the anchor don't exist (e.g. they get renamed in a future OS X version),
+					//we'll still get objects for them but any commands sent to those objects will silently fail.
+					SystemPreferencesPane *securityPane = [prefsApp.panes objectWithID: @"com.apple.preference.security"];
+					SystemPreferencesAnchor *accessibilityAnchor = [securityPane.anchors objectWithName: @"Privacy_Accessibility"];
+					
+					//Open the System Preferences application and bring its window to the foreground.
+					[prefsApp activate];
+					
+					//Show the accessibility anchor, if it exists.
+					[accessibilityAnchor reveal];
+				}
+					break;
+					
+				case NSAlertSecondButtonReturn:
+					[NSApp terminate:self];
+					return;
+					break;
+					
+					
+			}
+			
+		}
+		
+	}
     
     
     NSColor* backgroundColor = [NSColor colorWithCalibratedRed:0.0f green:0.0f blue:0.0f alpha:.4];

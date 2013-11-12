@@ -19,23 +19,23 @@
 
 //#define SRCommon_PotentiallyUsefulDebugInfo
 
-#ifdef	SRCommon_PotentiallyUsefulDebugInfo
+#ifdef        SRCommon_PotentiallyUsefulDebugInfo
 #warning 64BIT: Check formatting arguments
-#define PUDNSLog(X,...)	NSLog(X,##__VA_ARGS__)
+#define PUDNSLog(X,...)        NSLog(X,##__VA_ARGS__)
 #else
-#define PUDNSLog(X,...)	{ ; }
+#define PUDNSLog(X,...)        { ; }
 #endif
 
 #pragma mark -
-#pragma mark dummy class 
+#pragma mark dummy class
 
 @implementation SRDummyClass @end
 
 #pragma mark -
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRStringForKeyCode()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSString * SRStringForKeyCode( NSInteger keyCode )
 {
     static SRKeyCodeTransformer *keyCodeTransformer = nil;
@@ -44,84 +44,84 @@ NSString * SRStringForKeyCode( NSInteger keyCode )
     return [keyCodeTransformer transformedValue:[NSNumber numberWithShort:keyCode]];
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRStringForCarbonModifierFlags()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSString * SRStringForCarbonModifierFlags( NSUInteger flags )
 {
-    NSString *modifierFlagsString = [NSString stringWithFormat:@"%@%@%@%@", 
-		( flags & controlKey ? [NSString stringWithFormat:@"%d", KeyboardControlGlyph] : @"" ),
-		( flags & optionKey ? [NSString stringWithFormat:@"%d", KeyboardOptionGlyph] : @"" ),
-		( flags & shiftKey ? [NSString stringWithFormat:@"%d", KeyboardShiftGlyph] : @"" ),
-		( flags & cmdKey ? [NSString stringWithFormat:@"%d", KeyboardCommandGlyph] : @"" )];
+    NSString *modifierFlagsString = [NSString stringWithFormat:@"%@%@%@%@",
+									 ( flags & controlKey ? [NSString stringWithFormat:@"%C", KeyboardControlGlyph] : @"" ),
+									 ( flags & optionKey ? [NSString stringWithFormat:@"%C", KeyboardOptionGlyph] : @"" ),
+									 ( flags & shiftKey ? [NSString stringWithFormat:@"%C", KeyboardShiftGlyph] : @"" ),
+									 ( flags & cmdKey ? [NSString stringWithFormat:@"%C", KeyboardCommandGlyph] : @"" )];
 	return modifierFlagsString;
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRStringForCarbonModifierFlagsAndKeyCode()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSString * SRStringForCarbonModifierFlagsAndKeyCode( NSUInteger flags, NSInteger keyCode )
 {
-    return [NSString stringWithFormat: @"%@%@", 
-        SRStringForCarbonModifierFlags( flags ), 
-        SRStringForKeyCode( keyCode )];
+    return [NSString stringWithFormat: @"%@%@",
+			SRStringForCarbonModifierFlags( flags ),
+			SRStringForKeyCode( keyCode )];
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRStringForCocoaModifierFlags()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSString * SRStringForCocoaModifierFlags( NSUInteger flags )
 {
-    NSString *modifierFlagsString = [NSString stringWithFormat:@"%@%@%@%@", 
-		( flags & NSControlKeyMask ? [NSString stringWithFormat:@"%d", KeyboardControlGlyph] : @"" ),
-		( flags & NSAlternateKeyMask ? [NSString stringWithFormat:@"%d", KeyboardOptionGlyph] : @"" ),
-		( flags & NSShiftKeyMask ? [NSString stringWithFormat:@"%d", KeyboardShiftGlyph] : @"" ),
-		( flags & NSCommandKeyMask ? [NSString stringWithFormat:@"%d", KeyboardCommandGlyph] : @"" )];
+    NSString *modifierFlagsString = [NSString stringWithFormat:@"%@%@%@%@",
+									 ( flags & NSControlKeyMask ? [NSString stringWithFormat:@"%C", KeyboardControlGlyph] : @"" ),
+									 ( flags & NSAlternateKeyMask ? [NSString stringWithFormat:@"%C", KeyboardOptionGlyph] : @"" ),
+									 ( flags & NSShiftKeyMask ? [NSString stringWithFormat:@"%C", KeyboardShiftGlyph] : @"" ),
+									 ( flags & NSCommandKeyMask ? [NSString stringWithFormat:@"%C", KeyboardCommandGlyph] : @"" )];
 	
 	return modifierFlagsString;
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRStringForCocoaModifierFlagsAndKeyCode()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSString * SRStringForCocoaModifierFlagsAndKeyCode( NSUInteger flags, NSInteger keyCode )
 {
-    return [NSString stringWithFormat: @"%@%@", 
-        SRStringForCocoaModifierFlags( flags ),
-        SRStringForKeyCode( keyCode )];
+    return [NSString stringWithFormat: @"%@%@",
+			SRStringForCocoaModifierFlags( flags ),
+			SRStringForKeyCode( keyCode )];
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRReadableStringForCarbonModifierFlagsAndKeyCode()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSString * SRReadableStringForCarbonModifierFlagsAndKeyCode( NSUInteger flags, NSInteger keyCode )
 {
-    NSString *readableString = [NSString stringWithFormat:@"%@%@%@%@%@", 
-		( flags & cmdKey ? SRLoc(@"Command + ") : @""),
-		( flags & optionKey ? SRLoc(@"Option + ") : @""),
-		( flags & controlKey ? SRLoc(@"Control + ") : @""),
-		( flags & shiftKey ? SRLoc(@"Shift + ") : @""),
-        SRStringForKeyCode( keyCode )];
-	return readableString;    
-}
-
-//---------------------------------------------------------- 
-// SRReadableStringForCocoaModifierFlagsAndKeyCode()
-//---------------------------------------------------------- 
-NSString * SRReadableStringForCocoaModifierFlagsAndKeyCode( NSUInteger flags, NSInteger keyCode )
-{
-    NSString *readableString = [NSString stringWithFormat:@"%@%@%@%@%@", 
-		(flags & NSCommandKeyMask ? SRLoc(@"Command + ") : @""),
-		(flags & NSAlternateKeyMask ? SRLoc(@"Option + ") : @""),
-		(flags & NSControlKeyMask ? SRLoc(@"Control + ") : @""),
-		(flags & NSShiftKeyMask ? SRLoc(@"Shift + ") : @""),
-        SRStringForKeyCode( keyCode )];
+    NSString *readableString = [NSString stringWithFormat:@"%@%@%@%@%@",
+								( flags & cmdKey ? SRLoc(@"Command + ") : @""),
+								( flags & optionKey ? SRLoc(@"Option + ") : @""),
+								( flags & controlKey ? SRLoc(@"Control + ") : @""),
+								( flags & shiftKey ? SRLoc(@"Shift + ") : @""),
+								SRStringForKeyCode( keyCode )];
 	return readableString;
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
+// SRReadableStringForCocoaModifierFlagsAndKeyCode()
+//----------------------------------------------------------
+NSString * SRReadableStringForCocoaModifierFlagsAndKeyCode( NSUInteger flags, NSInteger keyCode )
+{
+    NSString *readableString = [NSString stringWithFormat:@"%@%@%@%@%@",
+								(flags & NSCommandKeyMask ? SRLoc(@"Command + ") : @""),
+								(flags & NSAlternateKeyMask ? SRLoc(@"Option + ") : @""),
+								(flags & NSControlKeyMask ? SRLoc(@"Control + ") : @""),
+								(flags & NSShiftKeyMask ? SRLoc(@"Shift + ") : @""),
+								SRStringForKeyCode( keyCode )];
+	return readableString;
+}
+
+//----------------------------------------------------------
 // SRCarbonToCocoaFlags()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSUInteger SRCarbonToCocoaFlags( NSUInteger carbonFlags )
 {
 	NSUInteger cocoaFlags = ShortcutRecorderEmptyFlags;
@@ -135,9 +135,9 @@ NSUInteger SRCarbonToCocoaFlags( NSUInteger carbonFlags )
 	return cocoaFlags;
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRCocoaToCarbonFlags()
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 NSUInteger SRCocoaToCarbonFlags( NSUInteger cocoaFlags )
 {
 	NSUInteger carbonFlags = ShortcutRecorderEmptyFlags;
@@ -151,14 +151,14 @@ NSUInteger SRCocoaToCarbonFlags( NSUInteger cocoaFlags )
 	return carbonFlags;
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRCharacterForKeyCodeAndCarbonFlags()
 //----------------------------------------------------------
 NSString *SRCharacterForKeyCodeAndCarbonFlags(NSInteger keyCode, NSUInteger carbonFlags) {
 	return SRCharacterForKeyCodeAndCocoaFlags(keyCode, SRCarbonToCocoaFlags(carbonFlags));
 }
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // SRCharacterForKeyCodeAndCocoaFlags()
 //----------------------------------------------------------
 NSString *SRCharacterForKeyCodeAndCocoaFlags(NSInteger keyCode, NSUInteger cocoaFlags) {
@@ -167,7 +167,7 @@ NSString *SRCharacterForKeyCodeAndCocoaFlags(NSInteger keyCode, NSUInteger cocoa
 			 keyCode, cocoaFlags);
 	
 	// Fall back to string based on key code:
-#define	FailWithNaiveString SRStringForKeyCode(keyCode)
+#define        FailWithNaiveString SRStringForKeyCode(keyCode)
 	
 	UInt32              deadKeyState;
     OSStatus err = noErr;
@@ -187,28 +187,28 @@ NSString *SRCharacterForKeyCodeAndCocoaFlags(NSInteger keyCode, NSUInteger cocoa
 		return FailWithNaiveString;
 	
 	EventModifiers modifiers = 0;
-	if (cocoaFlags & NSAlternateKeyMask)	modifiers |= optionKey;
-	if (cocoaFlags & NSShiftKeyMask)		modifiers |= shiftKey;
+	if (cocoaFlags & NSAlternateKeyMask)        modifiers |= optionKey;
+	if (cocoaFlags & NSShiftKeyMask)                modifiers |= shiftKey;
 	UniCharCount maxStringLength = 4, actualStringLength;
 	UniChar unicodeString[4];
 	err = UCKeyTranslate( keyLayout, (UInt16)keyCode, kUCKeyActionDisplay, modifiers, LMGetKbdType(), kUCKeyTranslateNoDeadKeysBit, &deadKeyState, maxStringLength, &actualStringLength, unicodeString );
 	if(err != noErr)
 		return FailWithNaiveString;
-
+	
 	CFStringRef temp = CFStringCreateWithCharacters(kCFAllocatorDefault, unicodeString, 1);
 	CFMutableStringRef mutableTemp = CFStringCreateMutableCopy(kCFAllocatorDefault, 0, temp);
-
+	
 	locale = CFLocaleCopyCurrent();
 	CFStringCapitalize(mutableTemp, locale);
 	if (locale) CFRelease(locale);
-
+	
 	NSString *resultString = [NSString stringWithString:(__bridge NSString *)mutableTemp];
-
+	
 	if (temp) CFRelease(temp);
 	if (mutableTemp) CFRelease(mutableTemp);
-
+	
 	PUDNSLog(@"character: -%@-", (NSString *)resultString);
-
+	
 	return resultString;
 }
 
@@ -227,9 +227,9 @@ NSString *SRCharacterForKeyCodeAndCocoaFlags(NSInteger keyCode, NSUInteger cocoa
 CGFloat SRAnimationEaseInOut(CGFloat t) {
 	// This function implements a sinusoidal ease-in/ease-out for t = 0 to 1.0.  T is scaled to represent the interval of one full period of the sine function, and transposed to lie above the X axis.
 	CGFloat x = (CGSin((t * CG_M_PI) - CG_M_PI_2) + 1.0f ) / 2.0f;
-	//	NSLog(@"SRAnimationEaseInOut: %f. a: %f, b: %f, c: %f, d: %f, e: %f", t, (t * M_PI), ((t * M_PI) - M_PI_2), sin((t * M_PI) - M_PI_2), (sin((t * M_PI) - M_PI_2) + 1.0), x);
+	//        NSLog(@"SRAnimationEaseInOut: %f. a: %f, b: %f, c: %f, d: %f, e: %f", t, (t * M_PI), ((t * M_PI) - M_PI_2), sin((t * M_PI) - M_PI_2), (sin((t * M_PI) - M_PI_2) + 1.0), x);
 	return x;
-} 
+}
 
 
 #pragma mark -
@@ -237,9 +237,9 @@ CGFloat SRAnimationEaseInOut(CGFloat t) {
 
 @implementation NSAlert( SRAdditions )
 
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 // + alertWithNonRecoverableError:
-//---------------------------------------------------------- 
+//----------------------------------------------------------
 + (NSAlert *) alertWithNonRecoverableError:(NSError *)error;
 {
 	NSString *reason = [error localizedRecoverySuggestion];
@@ -269,26 +269,26 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 
 @implementation SRSharedImageProvider
 + (NSImage *)supportingImageWithName:(NSString *)name {
-//	NSLog(@"supportingImageWithName: %@", name);
+	//        NSLog(@"supportingImageWithName: %@", name);
 	if (nil == SRSharedImageCache) {
 		SRSharedImageCache = [NSMutableDictionary dictionary];
-//		NSLog(@"inited cache");
+		//                NSLog(@"inited cache");
 	}
 	NSImage *cachedImage = nil;
 	if (nil != (cachedImage = [SRSharedImageCache objectForKey:name])) {
-//		NSLog(@"returned cached image: %@", cachedImage);
+		//                NSLog(@"returned cached image: %@", cachedImage);
 		return cachedImage;
 	}
 	
-//	NSLog(@"constructing image");
+	//        NSLog(@"constructing image");
 	NSSize size;
 	NSValue *sizeValue = [self performSelector:NSSelectorFromString([NSString stringWithFormat:@"_size%@", name])];
 	size = [sizeValue sizeValue];
-//	NSLog(@"size: %@", NSStringFromSize(size));
+	//        NSLog(@"size: %@", NSStringFromSize(size));
 	
 	NSCustomImageRep *customImageRep = [[NSCustomImageRep alloc] initWithDrawSelector:NSSelectorFromString([NSString stringWithFormat:@"_draw%@:", name]) delegate:self];
 	[customImageRep setSize:size];
-//	NSLog(@"created customImageRep: %@", customImageRep);
+	//        NSLog(@"created customImageRep: %@", customImageRep);
 	NSImage *returnImage = [[NSImage alloc] initWithSize:size];
 	[returnImage addRepresentation:customImageRep];
 	[returnImage setScalesWhenResized:YES];
@@ -298,13 +298,13 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 	
 	NSData *tiff = [returnImage TIFFRepresentation];
 	[tiff writeToURL:[NSURL fileURLWithPath:[[NSString stringWithFormat:@"~/Desktop/m_%@.tiff", name] stringByExpandingTildeInPath]] atomically:YES];
-
+	
 	NSSize sizeQDRPL = NSMakeSize(size.width*4.0,size.height*4.0);
 	
-//	sizeQDRPL = NSMakeSize(70.0,70.0);
+	//        sizeQDRPL = NSMakeSize(70.0,70.0);
 	NSCustomImageRep *customImageRepQDRPL = [[NSCustomImageRep alloc] initWithDrawSelector:NSSelectorFromString([NSString stringWithFormat:@"_draw%@:", name]) delegate:self];
 	[customImageRepQDRPL setSize:sizeQDRPL];
-//	NSLog(@"created customImageRepQDRPL: %@", customImageRepQDRPL);
+	//        NSLog(@"created customImageRepQDRPL: %@", customImageRepQDRPL);
 	NSImage *returnImageQDRPL = [[NSImage alloc] initWithSize:sizeQDRPL];
 	[returnImageQDRPL addRepresentation:customImageRepQDRPL];
 	[customImageRepQDRPL release];
@@ -315,21 +315,21 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 	
 #endif
 	
-//	NSLog(@"returned image: %@", returnImage);
+	//        NSLog(@"returned image: %@", returnImage);
 	return returnImage;
 }
 @end
 
 @implementation SRSharedImageProvider (Private)
 
-#define MakeRelativePoint(x,y)	NSMakePoint(x*hScale, y*vScale)
+#define MakeRelativePoint(x,y)        NSMakePoint(x*hScale, y*vScale)
 
 + (NSValue *)_sizeSRSnapback {
 	return [NSValue valueWithSize:NSMakeSize(14.0f,14.0f)];
 }
 + (void)_drawSRSnapback:(id)anNSCustomImageRep {
 	
-//	NSLog(@"drawSRSnapback using: %@", anNSCustomImageRep);
+	//        NSLog(@"drawSRSnapback using: %@", anNSCustomImageRep);
 	
 	NSCustomImageRep *rep = anNSCustomImageRep;
 	NSSize size = [rep size];
@@ -350,7 +350,7 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 	[bp lineToPoint:MakeRelativePoint(0.4085750f, 0.2654000f)];
 	
 	NSAffineTransform *flip = [[NSAffineTransform alloc] init];
-//	[flip translateXBy:0.95f yBy:-1.0f];
+	//        [flip translateXBy:0.95f yBy:-1.0f];
 	[flip scaleXBy:0.9f yBy:1.0f];
 	[flip translateXBy:0.5f yBy:-0.5f];
 	
@@ -373,7 +373,7 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 + (NSValue *)_sizeSRRemoveShortcutPressed { return [self _sizeSRRemoveShortcut]; }
 + (void)_drawARemoveShortcutBoxUsingRep:(id)anNSCustomImageRep opacity:(CGFloat)opacity {
 	
-//	NSLog(@"drawARemoveShortcutBoxUsingRep: %@ opacity: %f", anNSCustomImageRep, opacity);
+	//        NSLog(@"drawARemoveShortcutBoxUsingRep: %@ opacity: %f", anNSCustomImageRep, opacity);
 	
 	NSCustomImageRep *rep = anNSCustomImageRep;
 	NSSize size = [rep size];
@@ -392,24 +392,24 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 	[cross lineToPoint:MakeRelativePoint(10.0f,10.0f)];
 	[cross moveToPoint:MakeRelativePoint(10.0f,4.0f)];
 	[cross lineToPoint:MakeRelativePoint(4.0f,10.0f)];
-		
+	
 	[cross stroke];
 }
 + (void)_drawSRRemoveShortcut:(id)anNSCustomImageRep {
 	
-//	NSLog(@"drawSRRemoveShortcut using: %@", anNSCustomImageRep);
+	//        NSLog(@"drawSRRemoveShortcut using: %@", anNSCustomImageRep);
 	
 	[self _drawARemoveShortcutBoxUsingRep:anNSCustomImageRep opacity:0.75f];
 }
 + (void)_drawSRRemoveShortcutRollover:(id)anNSCustomImageRep {
 	
-//	NSLog(@"drawSRRemoveShortcutRollover using: %@", anNSCustomImageRep);
+	//        NSLog(@"drawSRRemoveShortcutRollover using: %@", anNSCustomImageRep);
 	
-	[self _drawARemoveShortcutBoxUsingRep:anNSCustomImageRep opacity:0.65f];	
+	[self _drawARemoveShortcutBoxUsingRep:anNSCustomImageRep opacity:0.65f];
 }
 + (void)_drawSRRemoveShortcutPressed:(id)anNSCustomImageRep {
 	
-//	NSLog(@"drawSRRemoveShortcutPressed using: %@", anNSCustomImageRep);
+	//        NSLog(@"drawSRRemoveShortcutPressed using: %@", anNSCustomImageRep);
 	
 	[self _drawARemoveShortcutBoxUsingRep:anNSCustomImageRep opacity:0.55f];
 }

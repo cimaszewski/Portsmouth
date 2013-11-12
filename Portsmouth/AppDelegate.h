@@ -21,6 +21,7 @@
 #import "PreferencesWindowController.h"
 #import "WindowMoverController.h"
 #import "HotKeyController.h"
+#import "System Preferences.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
 @private
