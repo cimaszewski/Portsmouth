@@ -177,7 +177,6 @@ extern short GetMBarHeight(void);
             _moveRect = _windowRect;
             _moveRect.origin.y = [[[NSScreen screens] objectAtIndex:0] frame].size.height  - _moveRect.origin.y - _moveRect.size.height;
             
-			
             if (_focusedWindow) {
 				BOOL isCurrentlyFullscreened = NO;
 				
