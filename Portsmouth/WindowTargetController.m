@@ -216,7 +216,7 @@ extern short GetMBarHeight(void);
                         // recalculated the origin if the application has a min size greater than the 
                         NSSize size = [AccessibilityUtil getWindowSize:_focusedWindow];
                         
-                        if (size.height != _moveRect.size.height || size.width != _moveRect.size.width)
+                        if ((int)size.height != (int)_moveRect.size.height || (int)size.width != (int)_moveRect.size.width)
                         {
                             if (_targetConstant == kRightWindowTarget || _targetConstant == kTopRightWindowTarget || _targetConstant == kBottomRightWindowTarget)
                             {
@@ -235,6 +235,7 @@ extern short GetMBarHeight(void);
                                 _moveRect.origin.y = (_moveRect.size.height - size.height)/2;
                             }
                         }
+						
                         
                         // reset the position due to menu bar/dock restrictions
                         [AccessibilityUtil setWindowPosition:_focusedWindow x:_moveRect.origin.x y:_moveRect.origin.y];
@@ -260,25 +261,24 @@ extern short GetMBarHeight(void);
                     // recalculated the origin if the application has a min size greater than the
                     NSSize size = [AccessibilityUtil getWindowSize:_focusedWindow];
                     
-                    if (size.height != _moveRect.size.height || size.width != _moveRect.size.width)
-                    {
-                        if (_targetConstant == kRightWindowTarget || _targetConstant == kTopRightWindowTarget || _targetConstant == kBottomRightWindowTarget)
+					
+                    
+                        if ((_targetConstant == kRightWindowTarget || _targetConstant == kTopRightWindowTarget || _targetConstant == kBottomRightWindowTarget) && (int)size.width != (int)_moveRect.size.width)
                         {
                             _moveRect.origin.x += (_moveRect.size.width - size.width);
                         }
-                        if (_targetConstant == kBottomRightWindowTarget || _targetConstant == kBottomLeftWindowTarget || _targetConstant == kBottomWindowTarget)
+                        if ((_targetConstant == kBottomRightWindowTarget || _targetConstant == kBottomLeftWindowTarget || _targetConstant == kBottomWindowTarget) && (int)size.height != (int)_moveRect.size.height)
                         {
                             _moveRect.origin.y += (_moveRect.size.height - size.height);
                         }
-                        if (_targetConstant == kTopWindowTarget || _targetConstant == kBottomWindowTarget || _targetConstant == kFullScreenWindowTarget)
+                        if ((_targetConstant == kTopWindowTarget || _targetConstant == kBottomWindowTarget || _targetConstant == kFullScreenWindowTarget) && (int)size.width != (int)_moveRect.size.width)
                         {
-                            _moveRect.origin.x = (_moveRect.size.width - size.width)/2;
+                            _moveRect.origin.x += (_moveRect.size.width - size.width)/2;
                         }
-                        if (_targetConstant == kLeftWindowTarget || _targetConstant == kRightWindowTarget || _targetConstant == kFullScreenWindowTarget)
+                        if ((_targetConstant == kLeftWindowTarget || _targetConstant == kRightWindowTarget || _targetConstant == kFullScreenWindowTarget) && (int)size.height != (int)_moveRect.size.height)
                         {
-                            _moveRect.origin.y = (_moveRect.size.height - size.height)/2;
+                            _moveRect.origin.y += (_moveRect.size.height - size.height)/2;
                         }
-                    }
 
                     
                     // reset the position due to menu bar/dock restrictions
