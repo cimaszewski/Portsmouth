@@ -372,7 +372,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429538673.701126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "338"
@@ -516,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429537982.693451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "-moveWindow"
             landmarkType = "5">
          </BreakpointContent>
@@ -532,23 +532,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "-moveWindow"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429538673.701126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "293"
@@ -564,7 +548,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429538673.701126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "332"
@@ -580,7 +564,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429538673.701126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "316"
@@ -596,7 +580,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429538673.701126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "324"
@@ -612,7 +596,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429538673.701126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "328"
@@ -866,7 +850,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Portsmouth/WindowTargetController.m"
-            timestampString = "414151106.959676"
+            timestampString = "429538673.701126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
@@ -1112,6 +1096,22 @@
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "-initWithScreenRect:visibleRect:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Portsmouth/WindowTargetController.m"
+            timestampString = "429537982.693451"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
+            landmarkName = "-moveWindow"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
