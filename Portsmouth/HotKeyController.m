@@ -49,11 +49,21 @@ OSStatus hotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
 		}
 		else if (l == HOTKEY_EVENTID_SCREENSAVER)
 		{
-			NSString *script=@"tell application \"ScreenSaverEngine\" \
-			\nactivate \
-			\nend tell";
-			NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:script];
-			[appleScript executeAndReturnError:nil];
+			// NSString *script=@"tell application \"ScreenSaverEngine\" \
+			// \nactivate \
+			// \nend tell";
+			// NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:script];
+			// [appleScript executeAndReturnError:nil];
+			
+			
+			
+			NSTask *task;
+			//NSMutableArray *arguments = [NSArray arrayWithObject:@"-suspend"];
+			
+			task = [[NSTask alloc] init];
+			//[task setArguments: arguments];
+			[task setLaunchPath: @"/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"];
+			[task launch];
 		}
 		else if (l == HOTKEY_EVENTID_LOCKSCREEN)
 		{
