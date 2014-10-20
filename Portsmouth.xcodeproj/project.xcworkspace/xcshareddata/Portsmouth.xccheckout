@@ -10,29 +10,29 @@
 	<string>Portsmouth</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>97E809D5-EB30-47B5-A3CC-D4E9D7CB432F</key>
+		<key>AA0AE226FF3AA0DAA175FE11D36E30514DA65B05</key>
 		<string>https://github.com/cimaszewski/Portsmouth.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Portsmouth.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>97E809D5-EB30-47B5-A3CC-D4E9D7CB432F</key>
+		<key>AA0AE226FF3AA0DAA175FE11D36E30514DA65B05</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/cimaszewski/Portsmouth.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>97E809D5-EB30-47B5-A3CC-D4E9D7CB432F</string>
+	<string>AA0AE226FF3AA0DAA175FE11D36E30514DA65B05</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>97E809D5-EB30-47B5-A3CC-D4E9D7CB432F</string>
+			<string>AA0AE226FF3AA0DAA175FE11D36E30514DA65B05</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Portsmouth</string>
 		</dict>

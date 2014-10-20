@@ -515,7 +515,7 @@
 			name = "Portsmouth Tests";
 			productName = "Target PracticeTests";
 			productReference = 832AEEB515E1330E00E071B6 /* Portsmouth Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -789,7 +789,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Portsmouth/Portsmouth-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					/usr/X11/include,
+					/opt/X11/include,
 					./ShortcutRecorder/Framework,
 					./ShortcutRecorder/Framework/Source,
 					./Log4Cocoa,
@@ -818,7 +818,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Portsmouth/Portsmouth-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					/usr/X11/include,
+					/opt/X11/include,
 					./ShortcutRecorder/Framework,
 					./ShortcutRecorder/Framework/Source,
 					./Log4Cocoa,

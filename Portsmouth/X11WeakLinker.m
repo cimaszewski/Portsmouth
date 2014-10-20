@@ -24,7 +24,7 @@
 
 static void	*xlibRef = NULL;
 
-static const char *xlib_path = "/usr/X11/lib/libX11.dylib";
+static const char *xlib_path = "/opt/X11/lib/libX11.dylib";
 
 // type define for the XGetErrorText function we'll be calling
 typedef int(XGetErrorTextFunction) (Display *_display, int _code, char *_buffer_return, int _length);
