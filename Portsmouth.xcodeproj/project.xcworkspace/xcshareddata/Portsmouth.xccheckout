@@ -14,7 +14,7 @@
 		<string>https://github.com/cimaszewski/Portsmouth.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Portsmouth.xcodeproj/project.xcworkspace</string>
+	<string>Portsmouth.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AA0AE226FF3AA0DAA175FE11D36E30514DA65B05</key>
